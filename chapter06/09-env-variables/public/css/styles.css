@@ -1,0 +1,65 @@
+body {
+  padding: 20px;
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  flex: 0 2 24%;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid darkgoldenrod;
+  margin: 30px;
+  padding: 10px;
+}
+
+.card h2 {
+  margin: 10px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.card p {
+  text-align: center;
+  margin: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card img {
+  width: 100%;
+}
+
+.cards-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.header {
+  width: 95%;
+  display: flex;
+  justify-content: stretch;
+  text-align: center;
+}
+
+.header h1 {
+  flex: 8;
+  font-size: xx-large;
+}
+
+.header img, .footer img {
+  flex: 1;
+  width: 200px;
+}
+
+.footer p {
+  flex: 4;
+  font-size: medium;
+}
+
+.footer {
+  display: flex;
+  justify-content: stretch;
+  text-align: center;
+  padding-top: 30px;
+}
