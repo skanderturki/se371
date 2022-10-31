@@ -1,0 +1,12 @@
+
+.grey {
+  background-color: rgba(205, 213, 234, 0.333);
+}
+
+.border {
+  border: 2px solid blueviolet;
+}
+
+.table_header {
+  background-color: rgba(174, 146, 176, 0.333);
+}
