@@ -1,4 +1,6 @@
-const { readFile, writeFile } = require('fs')
+const { readFile, writeFile } = require('fs');
+const path = require('path');
+const filePath = path.join(__dirname, "\\content\\first.txt");
 
 console.log('start')
 
@@ -14,7 +16,7 @@ const read = (path) => {
   });
 };
 
-read('./content/first.txt')
+read(filePath)
   .then((data)=> console.log(data))
   .catch((err)=> console.log(err));
 
