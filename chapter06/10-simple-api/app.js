@@ -22,5 +22,5 @@ fs.readFile(jsonPath, (err,data) => {
 app.get('/', (req,resp) => { resp.json(curriculum) } );
 
 app.listen(process.env.PORT, () => {
-	console.log("Server running at port= " + process.env.PORT);
+	console.log("Server running at port: " + process.env.PORT);
 });
