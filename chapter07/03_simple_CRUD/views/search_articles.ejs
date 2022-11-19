@@ -1,0 +1,12 @@
+<%- include('./partials/head.ejs', {title: title}) %>
+<body>
+  <%- include('./partials/header.ejs', {title: title}) %>
+  <main class="main-block">
+    <%- include('./partials/search_options.ejs') %>
+    <br>
+    <br>
+    <%- include('./partials/table.ejs', {articles: articles}) %>
+  </main>
+  <%- include('./partials/footer.ejs') %>
+</body>
+</html>

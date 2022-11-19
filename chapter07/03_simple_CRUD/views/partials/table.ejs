@@ -1,0 +1,24 @@
+<article id="articles_table">
+  <% if( articles != undefined && articles != null ){ %>
+    <table>
+      <thead>
+        <tr>
+          <th>Id
+          <th>Name
+          <th>Code
+          <th>Description
+          <th></th>
+      <tbody>
+          <% if(articles.length > 0){ %>
+            <% articles.forEach((article) => { %>
+              <tr>
+                <td><%= article.id %>
+                <td><%= article.name %>
+                <td><%= article.code %>
+                <td><%= article.description %>
+                <td><form method="DELETE" action="/articles/delete/id/<%= article.id %>"><input type="submit" value="Delete" /></form></td>
+            <% }) %>
+        
+    </table>
+  <% }} %>
+</article>

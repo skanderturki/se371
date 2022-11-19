@@ -1,4 +1,3 @@
-const { response } = require('express');
 const express = require('express');
 require('dotenv').config();
 
@@ -24,7 +23,7 @@ mongoose.connect(process.env.MONGO_URI)
   let name = request.params.name;
   let age = request.params.age;
   let positions = request.params.positions.split(";");
-  console.log(positions);
+
   let emp = new Employee({name: name, age: age, positions: positions});
   emp.save()
       .then( (result) => { 
@@ -56,6 +55,18 @@ mongoose.connect(process.env.MONGO_URI)
  });
 
  app.get('/find-employee/position/:position', (request, response) => {
+  Employee.find({ positions: request.params.position })
+  .sort({ age : -1})
+  .select('name positions')
+    .then( (result) => {
+      response.send(result);
+    })
+    .catch( (err) => {
+      console.log(err);
+    });
+ });
+
+ app.get('/find-employee2/position/:position', (request, response) => {
   Employee.find({ positions: request.params.position })
     .sort( { age: -1 } )
     .select( 'name positions' )
