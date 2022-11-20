@@ -12,8 +12,8 @@ router.get('/search', articlesController.open_search_article_page);
 
 // read routes
 router.get('/find', articlesController.find_articles);
-router.get('/id/:id', articlesController.get_articles_byID);
-router.get('/category/:category', articlesController.get_articles_byCategory);
+//router.get('/id/:id', articlesController.get_articles_byID);
+//router.get('/category/:category', articlesController.get_articles_byCategory);
 
 // write routes
 router.post('/add', [ check('name').isLength({ min: 3 }), 
@@ -21,7 +21,7 @@ router.post('/add', [ check('name').isLength({ min: 3 }),
                   , articlesController.add_article
             );
 
-router.post('/update', articlesController.update_article);
-router.post('/delete', articlesController.delete_article);
+//router.post('/update', articlesController.update_article);
+router.delete('/delete/:id', articlesController.delete_article);
 
 module.exports = router;

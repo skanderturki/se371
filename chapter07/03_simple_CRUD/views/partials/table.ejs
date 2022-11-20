@@ -1,5 +1,19 @@
 <article id="articles_table">
   <% if( articles != undefined && articles != null ){ %>
+    <script>
+      const deleteArt = (e) => {
+        let delete_promise = fetch('/articles/delete/' + e.id, { method: 'DELETE'})
+        delete_promise.then(response => response.json())
+                           .then( data => {
+                              window.location = data.redirect;
+                           })
+                           .then(data => {  })
+          .catch((reject) => {
+            document.getElementById("message_delete").textContent = reject;
+          });
+      }
+    </script>
+    <p id="message_delete"> </p>
     <table>
       <thead>
         <tr>
@@ -15,8 +29,8 @@
                 <td><%= article.id %>
                 <td><%= article.name %>
                 <td><%= article.code %>
-                <td><%= article.description %>
-                <td><form method="DELETE" action="/articles/delete/id/<%= article.id %>"><input type="submit" value="Delete" /></form></td>
+                <td><%= article.description %> 
+                <td><button id="<%= article.id %>" onclick="deleteArt(this)" data-artid="<%= article.id %>">Delete</button></td>
             <% }) %>
         
     </table>

@@ -79,7 +79,14 @@ const update_article = (request, response) => {
 };
 
 const delete_article = (request, response) => {
+  let id = request.params.id;
 
+  Article.findByIdAndDelete(id)
+    .then((result) => {
+      console.log(`Article deleted from database: id -> ${result._id}`);
+      response.json({ redirect: '/articles/search'});
+    })
+    .catch((err) => { console.log(err) });
 };
 
 module.exports = {open_add_article_form, open_search_article_page,
