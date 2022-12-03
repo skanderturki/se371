@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage | Login</title>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <div class="login-form">
+      <% if(err) { %>
+      <p><%= err %></p>
+      <% } %>
+      <h3>Login Page</h3>
+      <form action="/login" method="POST">
+        <div class="input-group">
+          <label for="email">Email:</label>
+          <input type="email" name="email" />
+        </div>
+        <div class="input-group">
+          <label for="password">Password:</label>
+          <input type="password" name="password" />
+        </div>
+        <button>Login</button>
+      </form>
+      <a href="/register">Register</a>
+    </div>
+  </body>
+</html>
