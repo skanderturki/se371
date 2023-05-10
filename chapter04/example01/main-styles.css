@@ -1,0 +1,9 @@
+body {
+  padding: 20px;
+  color: blue;
+}
+
+
+table, td, th {
+  border: 2px solid blue;
+}

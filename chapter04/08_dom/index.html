@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- general meta tags -->
+  <meta charset="utf-8">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- site specific tags -->
+  <title></title>
+</head>
+
+<body>
+  <p id="here">hello <span>there</span></p>
+  <ul>
+    <li>France</li>
+    <li>Spain</li>
+    <li>Thailand</li>
+  </ul>
+  <div id="main">
+    <a href="somewhere.html">
+      <img src="whatever.gif" class="thumb">
+    </a>
+  </div>
+
+  <script>
+
+    const node = document.getElementById("here");
+    console.log(node.innerHTML); // hello <span>there</span>
+    console.log(node.textContent); //“hello there”
+
+    const items = document.getElementsByTagName("li");
+    for (let i = 0; i < items.length; i++) {
+      // outputs: France, then Spain, then Thailand
+      console.log(items[i].textContent);
+    }
+
+    const link = document.querySelector("#main a");
+
+    console.log(link.href); // outputs: somewhere.html
+
+    const img = document.querySelector("#main img");
+    console.log(img.src); // outputs: whatever.gif
+
+    console.log(img.className); // outputs: thumb
+
+  </script>
+
+</body>
+
+</html>

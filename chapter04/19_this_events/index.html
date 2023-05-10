@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- general meta tags -->
+  <meta charset="utf-8">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- site specific tags -->
+  <title></title>
+</head>
+<body>
+  <script>
+    function logID1() {
+      console.log(this.id);
+    }
+
+    function logID2(source) {
+      console.log(source.id);
+    }
+  </script>
+  <table id="my_table1" onclick="logID1();">
+    <!-- when called, `this` will refer to the global object (window) or undefined in strict mode -->
+    <tr><td>Table 1: Click Me!</td></tr>
+  </table>
+
+  <table id="my_table2" onclick="logID2(this);">
+    <!-- when called, `this` will refer to the event target -->
+    <tr><td>Table 2: Click Me!</td></tr>
+  </table>
+</body>
+</html>

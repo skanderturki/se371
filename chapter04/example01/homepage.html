@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Best Javascript Books</title>
+  <!-- style sheets -->
+  <link rel="stylesheet" href="css-reset.css">
+  <link rel="stylesheet" href="main-styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata|Changa">
+</head>
+
+<body>
+  <header class="hi there">
+
+    <h1>Javascript</h1>
+
+  </header>
+  <main>
+
+    <button type="button" onClick="alert('Hi')">Buy</button>
+    <button type="button" onClick="console.log('second button pushed');">Buy</button>
+    <button type="button" onClick="f();">Buy</button>
+  </main>
+
+  <script>
+    //alert('Hello');
+    let answer = prompt("Please enter your name:");
+
+    document.write('<h1>your name is ' + answer + '</h1>');
+
+    console.log((!answer) ? 'the answer is empty' : 'Great: ' + answer);
+
+    const countries = ['{"id": "01", "name": "KSA"}',
+      '{"id": "02", "name": "Japan"}',
+      '{"id": "03", "name": "Russia"}',
+      '{"id": "04", "name": "Germany"}',
+      '{"id": "05", "name": "Brazil"}',
+      '{"id": "06", "name": "Kuwait"}',
+      '{"id": "07", "name": "Morocco"}',
+      '{"id": "08", "name": "Tanzania"}',
+      '{"id": "09", "name": "Vietnam"}',
+      '{"id": "10", "name": "Uruguay"}',
+      '{"id": "11", "name": "Oman"}'];
+
+    document.write('<table><tr><th>ID</th><th>Country</th></tr>');
+    for (let c of countries) {
+      let co = JSON.parse(c);
+      document.write('<tr><td>' + co.id + '</td><td>' + co.name + '</td><tr>')
+    }
+    document.write('</table>');
+
+    function f(){
+      document.open();
+      document.write('<table><tr><th>ID</th><th>Country</th></tr>');
+      for (let c of countries) {
+        let co = JSON.parse(c);
+        document.write('<tr><td>' + co.id + '</td><td>' + co.name + '</td><tr>')
+      }
+      document.write('</table>');
+      document.close();
+    }
+  </script>
+  <br>
+</body>
+
+</html>

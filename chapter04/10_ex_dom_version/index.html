@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- general meta tags -->
+  <meta charset="utf-8">
+  <meta name="author" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- site specific tags -->
+  <title>Exercise page 53</title>
+</head>
+<body>
+  <h1>Exercise page 66</h1>
+ <form method="post">
+   <fieldset>
+   <legend>Enter your Information:</legend>
+     <p>
+       <label>Position</label>
+       <input id="position" type="text" name="position">
+     </p>
+     <p>
+      <label>Name</label>
+      <input id="name" type="text" name="name">
+    </p>
+    <p>
+      <label>Last Name</label>
+      <input id="lastName" type="text" name="lastName">
+    </p>
+    <p>
+      <label>Email</label>
+      <input id="email" type="email" name="email">
+    </p>
+    <button type="button" onclick='makeArticle("display", getvalue("position")
+                                                ,getvalue("name")
+                                                ,getvalue("lastName")
+                                                ,getvalue("email"))'>
+                                                OK</button>
+    <input type="reset" onclick='clearElementByID("display")'>
+   </fieldset>
+ </form>
+ <br>
+ <div id="display"></div>
+ <script src="scripts.js"></script>
+</body>
+</html>

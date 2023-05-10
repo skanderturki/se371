@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <h1>Welcome to your dashboard: <span>
+      <% if(typeof user !== 'undefined') { %>
+        <%= user %>
+      <% } %>
+    </span></h1>
+    <p>You Are Authenticated!</p>
+    <h2>SECRET SECTION.....!</h2>
+
+    <form action="/logout" method="POST">
+      <button>Logout</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+
+/* General styles */
+p{
+  text-align: justify;
+}
+
+#site-title {
+  font-style: oblique;
+  font-size: 4rem;
+  text-align: center;
+  background-color: var(--bg-color-main);
+  color: white;
+  margin: 5px;
+  padding: 20px;
+}
+
+ul, ol {
+  list-style-position: inside;
+  text-align: left;
+  margin-left: 30px;
+}
+
+footer {
+  padding: 30px;
+}
+
+/* Grid styles */
+
+img {
+  width: 80%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: fit-content(200px) 1fr 1fr; 
+  /* add this rule to limit the height of the last row, number of rows unknown */
+  /* grid-template-rows: repeat(auto-fill, minmax(100px, 1fr)) 200px;  */
+  padding: 10px;
+  gap: 40px;
+}
+
+.grid-item {
+  background-color: var(--bg-color-secondary);
+  font-size: var(--fontsize-default);
+  text-align: center;
+}
+
+/* .grid-table {
+    overflow: auto; 
+} */
+
+@media (max-width: 680px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+
+  img {
+    width: 40%;
+  }
+  
+  [class^="grid-item-"] {
+    background-color: var(--bg-color-secondary);
+  }
+}
+

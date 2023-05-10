@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title> Bubbling Event Propagation Mode. </title>
+   <style>
+    .shadow {
+      background-color: cadetblue;
+    }
+    #board td {
+      border: solid 2px black;
+      width: 6rem;
+      height: 6rem;
+      font-size: xx-large;
+      text-align: center;
+    }
+   </style>
+</head>
+<body id="pagebody">
+  <h2> Different events  </h2>
+
+  <table id="board">
+    <tbody>
+      <tr id="row_0">
+        <td id="cell_0_0">A
+        <td id="cell_0_1">B
+        <td id="cell_0_2">C
+        <td id="cell_0_3">D
+        <td id="cell_0_4">E
+        <td id="cell_0_5">F
+      <tr id="row_1">
+        <td id="cell_1_0">G
+        <td id="cell_1_1">H
+        <td id="cell_1_2">I
+        <td id="cell_1_3">J
+        <td id="cell_1_4">K
+        <td id="cell_1_5">L
+      <tr id="row_2">
+        <td id="cell_2_0">M
+        <td id="cell_2_1">N
+        <td id="cell_2_2">O
+        <td id="cell_2_3">P
+        <td id="cell_2_4">Q
+        <td id="cell_2_5">R
+      <tr id="row_3">
+        <td id="cell_3_0">S
+        <td id="cell_3_1">T
+        <td id="cell_3_2">U
+        <td id="cell_3_3">V
+        <td id="cell_3_4">W
+        <td id="cell_3_5">X
+      <tr id="row_4">
+        <td id="cell_4_0">Y
+        <td id="cell_4_1">Z
+        <td id="cell_4_2">0
+        <td id="cell_4_3">1
+        <td id="cell_4_4">2
+        <td id="cell_4_5">3
+      <tr id="row_5">
+        <td id="cell_5_0">4
+        <td id="cell_5_1">5
+        <td id="cell_5_2">6
+        <td id="cell_5_3">7
+        <td id="cell_5_4">8
+        <td id="cell_5_5">9
+  </table>
+
+
+  <script>
+
+      document.addEventListener('DOMContentLoaded', 
+                                  function(e) {
+                                    const board_td_items = document.querySelectorAll("#board td");
+                                    for (let item of board_td_items) {
+                                      item.addEventListener("mouseover", function (e) {
+                                                                        item.classList.toggle('shadow');
+                                                                      }
+                                                            );
+                                    }
+                                  }
+      );
+
+
+      
+      document.getElementById("pagebody").addEventListener("keydown", function (e) {
+        let row = 0, col = 0;
+
+        let keyPressed = e.key;
+        let toAscii = keyPressed.charCodeAt(0);
+        let code = toAscii - 97;  // 97 ascii of 'a'
+        if ( code < 0 ){ //this means it may be a number
+          code += 49;
+          row = (code < 4)? 4 : 5;
+          col = (code + 2) % 6;
+        } else {
+          row = Math.floor( code / 6 );
+          col = code % 6;
+        }
+
+        cell_id = "cell_" + row + "_" + col;
+        
+        let cell = document.getElementById(cell_id);
+        if( cell )
+          cell.classList.toggle('shadow');
+
+      });
+
+
+  </script>
+</body>
+</html>

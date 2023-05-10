@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- general meta tags -->
+  <meta charset="utf-8">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- site specific tags -->
+  <title>Lab 02: Forms</title>
+  <!-- style -->
+  <style>
+    input:valid {
+        background-color: palegreen;
+    }
+    
+    input:invalid {
+        background-color: lightpink;
+    }
+  </style>
+    
+</head>
+<body>
+  <header>
+    <h1>Lab 02: Forms with HTML validation.</h1>
+    <nav>
+      
+    </nav>
+  </header>
+  <main>
+    <section>
+      <article>
+        <form method="post" action="/someAction">
+          <fieldset>
+          <legend></legend>
+            <div>
+              <label for="firstName">First Name:</label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                required
+                pattern="[a-zA-Z]{2,20}"
+                title="2 to 20 letters" />
+            </div>
+            <div>
+              <label for="lastName">Last Name:</label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                required
+                pattern="[a-zA-Z]{2,20}"
+                title="2 to 20 letters" />
+            </div>
+            <div>
+              <label for="email">E-Mail:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                title="An email" />
+            </div>
+            <div>
+              <label for="phoneNumber">Phone #:</label>
+              <input
+                type="text"
+                id="phoneNumber"
+                name="phoneNumber"
+                required
+                pattern="[0-9]{10,14}"
+                title="a phone number of 10 to 14 digits" />
+            </div>
+            <div>
+              <label for="address">Address:</label>
+              <input
+                type="text"
+                id="address"
+                name="address"
+                required
+                size="30"
+                pattern="[a-z]{10, 30}"
+                title="Address of no more than 30 characters" />
+            </div>
+            <div>
+              <label for="city">City:</label>
+              <input
+                type="text"
+                id="city"
+                name="city"
+                required
+                size="20"
+                pattern="[a-zA-Z ]{3, 20}"
+                title="Address of no more than 30 characters" />
+            </div>
+            <div>
+              <label for="region">Region:</label>
+              <select name="region" id="region" required>
+                  <option value="1">Mecca</option>
+                  <option value="2" selected>Riyadh</option>
+                  <option value="3">Eastern Region</option>
+                  <option value="4">Asir</option>
+                  <option value="5">Jazan</option>
+                  <option value="6">Medina</option>
+                  <option value="7">Al-Qassim</option>
+                  <option value="8">Tabuk</option>
+                  <option value="9">Ha'il</option>
+                  <option value="10">Najran</option>
+                  <option value="11">Al-Jawf</option>
+                  <option value="12">Al-Bahah</option>
+                  <option value="13">Northern Borders Region</option>
+              </select>
+            </div>
+            <div>
+              <label for="zipCode">Zip Code:</label>
+              <input
+                type="text"
+                id="zipCode"
+                name="zipCode"
+                required
+                pattern="[0-9]{4,6}"
+                title="a zip code of 4 to 6 digits" />
+            </div>
+            <div>
+              <label for="website">Website or Domain Name:</label>
+              <input
+                type="url"
+                id="website"
+                name="website"
+                title="a URL" />
+            </div>
+            <p>Do you have hosting?</p>
+            <div>
+              <input type="radio" id="hostingYes" name="hasHosting" value="1" checked>
+              <label for="hostingYes">Yes</label>
+            </div>
+            <div>
+              <input type="radio" id="hostingNo" name="hasHosting" value="2">
+              <label for="hostingNo">No</label>
+            </div>
+            <div>
+              <label for="description">Project Description: </label><br>
+              <textarea 
+                id="description" 
+                name="description" 
+                rows="4" 
+                cols="50">
+              </textarea>
+            </div>
+            <input type="submit">
+          </fieldset>
+        </form>
+      </article>
+    </section>
+  </main>
+  <footer>
+    
+  </footer>
+</body>
+</html>

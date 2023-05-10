@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- general meta tags -->
+  <meta charset="utf-8">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- site specific tags -->
+  <title></title>
+  <!-- style sheets -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Moyasar Styles -->
+  <link rel="stylesheet" href="https://cdn.moyasar.com/mpf/1.7.3/moyasar.css" />
+
+  <!-- Moyasar Scripts -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=fetch"></script>
+  <script src="https://cdn.moyasar.com/mpf/1.7.3/moyasar.js"></script>
+</head>
+<body>
+  <header>
+    
+    <nav>
+      
+    </nav>
+  </header>
+  <main>
+    <div class="mysr-form"></div>
+    <script>
+      Moyasar.init({
+        element: '.mysr-form',
+        amount: <%= total %>,
+        currency: 'SAR',
+        description: <%= description %>,
+        publishable_api_key: <%= moyasarPublicKey %>,
+        callback_url: 'https://localhost:3000/success',
+        methods: ['creditcard'],
+      })
+    </script>
+  </main>
+  <footer>
+    
+  </footer>
+</body>
+</html>

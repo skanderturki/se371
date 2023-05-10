@@ -1,0 +1,26 @@
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: burlywood;
+}
+
+.pixels {
+  width: 200px;
+  height: 50px;
+  background-color: cadetblue;
+}
+
+.percent70 {
+  float: left;
+  width: 70%;
+  height: 50%;
+  background-color: darkolivegreen;
+}
+
+.percent30 {
+  float: left;
+  width: 30%;
+  height: 50%;
+  background-color: rgb(139, 139, 247);
+}

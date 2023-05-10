@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- general meta tags -->
+  <meta charset="utf-8">
+  <meta name="author" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- site specific tags -->
+  <title>Register</title>
+  <link rel="stylesheet" href="./resources/css/styles2.css">
+</head>
+<body>
+  <form method="post" action="/register">
+    <fieldset>
+      <legend>Different Kinds of Input Controls</legend>
+      <div>
+        <label for="textinput">Text input:</label>
+        <input type="text" id="textinput" name="textinput" placeholder="Enter some text here." required />
+        <span>Error message</span>
+      </div>
+      <div>
+        <label for="story">Text Area input:</label>
+        <textarea id="story" name="story" placeholder="Enter some text here." maxlength="50"></textarea>
+      </div>
+      <div>
+        <label for="email">Email input:</label>
+        <input type="email" id="email" name="email" />
+      </div>
+      <div>
+        <label for="pwd">Password input:</label>
+        <input type="password" id="pwd" name="pwd" />
+      </div>
+      <div>
+        <label for="phone">Phone number 1:</label>
+        <input type="text" name="phone" id="phone" pattern="[0-9]+" maxlength="10" />
+      </div>
+      <div>
+        <label for="phone2">Phone number 2:</label>
+        <input type="text" name="phone2" id="phone2" pattern="[0-9]{10}"/>
+      </div>
+      <div>
+        <label for="phone3">Phone number 3:</label>
+        <input type="text" name="phone3" id="phone3" data-mask="(999)-999-9999" />
+      </div>
+      <div>
+        <label for="search">Search input:</label>
+        <input type="search" id="search" name="search" placeholder="enter search text.." />
+      </div>
+      <div>
+        <label for="choices">Choices Input:</label>
+        <select name="choices" id="choices">
+          <optgroup label="First Group">
+            <option value="1">First</option>
+            <option value="2" selected>Second</option>
+            <option value="3">Third</option>
+          </optgroup>
+          <optgroup label="Second Group">
+            <option value="4">Fourth</option>
+            <option value="5">Fifth</option>
+          </optgroup>
+        </select>
+      </div>
+      <fieldset>
+        <legend>Radio input:</legend>
+        <div>
+          <input type="radio" id="radio1" name="city" value="1" checked>
+          <label for="radio1">Riyadh</label>
+        </div>
+        <div>
+          <input type="radio" id="radio2" name="city" value="2">
+          <label for="radio2">Jeddah</label>
+        </div>
+        <div>
+          <input type="radio" id="radio3" name="city" value="3">
+          <label for="radio3">Damman</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>City to visit (checkbox input):</legend>
+        <div>
+          <input type="checkbox" id="checkbox1" name="visit" value="riyadh" checked>
+          <label for="checkbox1">Riyadh</label>
+        </div>
+        <div>
+          <input type="checkbox" id="checkbox2" name="visit" value="jeddah">
+          <label for="checkbox2">Jeddah</label>
+        </div>
+        <div>
+          <input type="checkbox" id="checkbox3" name="visit" value="dammam">
+          <label for="checkbox3">Damman</label>
+        </div>
+      </fieldset>
+
+      <div>
+        <label for="color_chosen">Choose color:</label>
+        <input type="color" name="color_chosen" id="color_chosen"/>
+      </div>
+
+      <input type="submit" value="Register" />
+      <input type="reset">
+      <button>
+        <img src="./resources/icons/fly-svgrepo-com.svg" alt="Where to travel?">
+      </button>
+    </fieldset>
+  </form>
+
+</body>
+</html>

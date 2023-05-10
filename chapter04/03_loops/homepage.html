@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Best Javascript Books</title>
+      <!-- style sheets -->
+    <link rel="stylesheet" href="css-reset.css">
+    <link rel="stylesheet" href="main-styles.css">
+  </head>
+  <body>
+    <header>
+      <h1>Javascript</h1>
+    </header>
+    <main>
+      <ul id="counts"></ul>
+    </main>
+
+    <script>
+
+      for( var i = 0; i < 10 ; i++){
+        let li = document.createElement('li');
+        li.textContent = i;
+        document.getElementById("counts").appendChild( li );
+      }
+
+        let li = document.createElement('li');
+        li.textContent = 'Finally: ' + i;
+        document.getElementById("counts").appendChild( li );  
+
+      // function display(){
+      //   let i = 0;
+      //   setInterval(function(){
+          
+      //     document.write('<p>' + i + '<p>');
+          
+      //     i++;
+      //   }, 1000);
+      // }
+      // display();
+    </script>
+
+  </body>
+</html>

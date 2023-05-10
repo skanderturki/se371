@@ -1,0 +1,2 @@
+# try commenting out the following line then do a git status
+/node_modules

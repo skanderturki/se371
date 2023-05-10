@@ -1,0 +1,144 @@
+
+/* General styles */
+p{
+  text-align: justify;
+}
+
+img {
+  max-width: 50px;
+  /* transform: rotate(-45deg); */
+  /* transform: translatex(100px) translatey(-30px); */
+  /* transform: skew(-20deg);*/
+  /*filter: grayscale(100%);*/
+  /* filter: blur(1px) hue-rotate(30deg) saturate(100%); */
+}
+
+#site-title {
+  font-style: oblique;
+  font-size: 4rem;
+  text-align: center;
+  background-color: var(--bg-color-main);
+  color: white;
+  margin: 5px;
+  padding: 20px;
+/*
+  transition-property: background-color;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  transition-delay: 0s;*/
+}
+
+@keyframes opacity-img {
+  0%   {opacity: 100%;}
+  25%  {opacity: 75%;}
+  50%  {opacity: 50%;}
+  75% {opacity: 25%;}
+  100% {opacity: 0%;}
+}
+
+.opacity-img {
+  animation-iteration-count: 10;
+  animation-play-state: running;
+  animation-timing-function: ease-out;
+  animation-name: opacity-img;
+  animation-duration: 2s;
+}
+
+#site-title:hover {
+  background-color: chocolate;
+}
+
+ul, ol {
+  list-style-position: inside;
+  text-align: left;
+  margin-left: 30px;
+}
+
+footer {
+  padding: 30px;
+}
+
+/* Grid styles */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "a1 a2 a3"
+                        "b1 b2 a3";
+  padding: 10px;
+  margin: 15px;
+  gap: 40px;
+}
+
+.grid-item {
+  background-color: var(--bg-color-secondary);
+  font-size: var(--fontsize-default);
+  text-align: center;
+}
+
+
+.a1 { grid-area: a1; }
+.a2 { grid-area: a2; }
+.a3 { grid-area: a3; }
+.b1 { grid-area: b1; }
+.b2 { grid-area: b2; }
+
+.menu {
+  background-color: rgb(254, 254, 254);
+  position: absolute;
+  left: -135px;
+  transition: left .6s ease-out;
+  border: solid 3px blue;
+  padding: 10px;
+}
+
+li img {
+  width: 20%;
+  position: absolute;
+  left: 135px;
+  top: -10px;
+}
+
+.menu:hover {
+  left: 0px;
+}
+
+@keyframes example {
+  0%   {background-color: red;}
+  25%  {background-color: rgb(223, 223, 67);}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+}
+
+.animated {
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  animation-timing-function: ease-out;
+  animation-name: example;
+  animation-duration: 2s;
+}
+
+.animated:hover {
+  animation-play-state: paused;
+}
+
+
+
+@media (max-width: 680px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas:"a1"
+                        "a2"
+                        "b1"
+                        "a3"
+                        "a3"
+                        "b2";
+    padding: 10px;
+
+  }
+  [class^="grid-item-"] {
+    background-color: var(--bg-color-secondary);
+
+  }
+}
+

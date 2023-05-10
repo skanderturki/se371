@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Web Development Training Program</title>
+      <!-- style sheets -->
+    <link rel="stylesheet" href="css-reset.css">
+    <link rel="stylesheet" href="main-styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+  </head>
+  <body>
+    <header>
+      <!-- Page header -->
+      <img src="img/company-logo.png" alt="ICT Corporation Logo"></div>
+      <h1>Web Development Training Program</h1>
+    </header>
+    <main class="main">
+      <h2>What is Web Development?</h2>
+      <p> Web Development is a software engineering discipline that involves the development of websites and web services. The variety of work in Web Development is huge, it can range from creating a basic static web page to complex interactive web apps, including enterprise-scale applications and application programming interfaces. However, there is much more that is relevant when developing for the web. For example, the design and content of a web page, web servers and networking as well as security aspects have to be considered.
+      </p>
+    
+      <h2>Why Web Development?</h2>
+      <p>The internet has disrupted our economy and society. The technologies we use on a daily basis will keep evolving, thus in the future Web Development will be even more important than it is today. Browsers are getting more powerful day by day, today they can even be used as whole operating systems (e.g. ChromeOS). Recent Web Development toolkits already allow you to create native apps on any device. Learning how Web Development works will provide you with powerful and versatile programming skills. These enable you to design websites, build applications, and to visualize data and make it accessible for users. Machine Learning, Artificial Intelligence, Robotics, and other domains often require modern web-based interfaces to connect with the user to provide value. Therefore, having knowledge of Web Development will be an asset for you!
+      </p>
+    
+      <img src="img/development.png" alt="javascript photo">
+    
+      <h2>What Will You Learn?</h2>
+      <ol>
+        <li>Create responsive and interactive web pages using cutting edge technologies including HTML, CSS, and JavaScript.</li>
+        <li>Acquire practical experience with open source tools and development frameworks, such as React.</li>
+        <li>Learn how to program web-based application programming interfaces with Node.js.</li>
+        <li>Bring data to life and build interactive visualizations and graphs for any type of data.</li>
+      </ol>
+    
+      <h2>What are the technologies studied in this course?</h2>
+      <table>
+        <tr><th>Technology<th>Version<th>Level</tr>
+        <tr><td>HTML<td>5<td>Advanced</tr>
+        <tr><td>CSS<td>3<td>Advanced</tr>
+        <tr><td>Javascript<td>ES6<td>Intermediate</tr>
+        <tr><td>React<td>19<td>Intermediate</tr>
+        <tr><td>Node.js<td>16<td>Introductory</tr>
+      </table>     
+      <button type="button" onClick="changeTableColor()">Change Color</button>
+    
+      <h2>FAQ</h2>
+      <ul>
+        <li><a href="">What are the costs of the program?</a></li>
+        <li><a href="">What are the conditions to get the certificate?</a></li>
+        <li><a href="">What is the estimated amount of effort that a student should spend per week to be able to get the certificate?</a></li>
+      </ul>
+    </main>
+    <footer>
+            <!-- Page footer starts here -->
+      <hr>
+      <img src="img/company-logo-small.png" alt="ICT Corporation logo">
+      <p>@ ICT Corporation, 2022</p>
+      <p><a href="">About the company</a></p> 
+    </footer>
+    <!-- END of CONTENT-->
+    <script>
+
+      function changeTableColor(){
+          let tableRows = document.getElementsByTagName("tr");
+          for ( let r of tableRows) {
+            r.classList.toggle("js-colored");
+          };
+      }
+ 
+
+    </script>
+
+  </body>
+</html>

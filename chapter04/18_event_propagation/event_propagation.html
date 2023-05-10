@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title> Bubbling Event Propagation Mode. </title>
+   <style>
+    .shadow {
+      background-color: cadetblue;
+    }
+   </style>
+</head>
+<body>
+   <h2> Bubbling Event Propagation Mode (DEFAULT).  </h2>
+
+   <button onclick="fw('button');">Fire</button>
+
+   <div id="menu">
+      <ul>
+        <li>Homepage</li>
+        <li>Contact us</li>
+        <li>About</li>
+      </ul>
+   </div>
+
+   <script>
+
+      function fw(sender) {
+         alert( `The sender is ${sender}.` );
+      }
+
+      document.addEventListener('DOMContentLoaded', 
+                                  function(e) {
+                                    const menu_li_items = document.querySelectorAll("#menu li");
+                                    for (let item of menu_li_items) {
+                                      item.addEventListener("click", function (e) {
+                                                                        item.classList.toggle('shadow');
+                                                                        alert("FROM LI:" + e.target + "; " + e.type + " ; " 
+                                                                                + e.clientX + ":" + e.clientY);
+                                                                        e.stopPropagation();
+                                                                      }
+                                                            );
+                                    }
+                                    const heading = document.querySelector("h2");
+                                    const menu_ul_items = document.querySelectorAll("#menu ul");
+                                    for (let item of menu_ul_items) {
+                                      item.addEventListener("click", function (e) {
+                                                                        alert("FROM UL:" + e.target + "; " + e.type + " ; " 
+                                                                                + e.clientX + ":" + e.clientY);
+                                                                      }
+                                                            );
+                                    }
+                                    const menu_div = document.querySelector("#menu");
+                                    menu_div.addEventListener("click", function (e) {
+                                                                        alert("FROM DIV:" + e.target + "; " + e.type + " ; " 
+                                                                                + e.clientX + ":" + e.clientY);
+                                                                      }, {capture: true} //means the handler will be triggered in capturing phase
+                                                            );
+                                  }
+                                );
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage | Login</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="login.js"></script>
+  </head>
+  <body>
+    <div class="login-form">
+      <% if(typeof err !== 'undefined') { %>
+      <p><%= err %></p>
+      <% } %>
+      <h3>Login Page</h3>
+      <form id="form_login" action="">
+        <div class="input-group">
+          <label for="email">Email:</label>
+          <input id="email" type="email" name="email" />
+        </div>
+        <div class="input-group">
+          <label for="password">Password:</label>
+          <input id="password" type="password" name="password" />
+        </div>
+        <button id="login_btn" type="submit">Submit</button>
+      </form>
+      <a href="/register">Register</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OTP Verification</title>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+  <div class="container">
+    <h1 class="brand">Welcome <span> 
+      <% if(typeof user !== 'undefined') { %>
+      <%= user %>
+      <% } %>
+      </span> Sign-up</h1>
+    <div class="wrapper animated bounceInLeft">
+      <div class="contact">
+        <p class="message"> 
+          <% if(typeof msg !== 'undefined') { %>
+            <%= msg %>
+          <% } %>
+        </p>
+        <form method="POST">
+          <% if(typeof email !== 'undefined') { %>
+            <input type="hidden" name="email" value="<%= email %>">
+          <% } %>
+          <% if(typeof sourcePage !== 'undefined') { %>
+            <input type="hidden" name="sourcePage" value="<%= sourcePage %>">
+          <% } %>
+          <div>
+            <label>Enter otp</label>
+            <input type="text" name="otp">
+          </div>
+          <div class="full">
+            <button formaction="verifyotp" formmethod="post" type="submit">Verify</button>
+          </div>
+          <div class="full">
+            <button formaction="resendotp" formmethod="post" type="submit">Resend OTP</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

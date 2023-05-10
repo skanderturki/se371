@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lab 01</title>
+  <style>
+
+  </style>
+</head>
+<body>
+  <form method="get" action="/register">
+    <fieldset>
+      <legend>Registration Form</legend>
+      <p>
+        <label>ID: </label>
+        <input type="text" name="id" maxlength="4"/>
+      </p>
+      <p>
+        <label>First Name: </label>
+        <input type="text" name="firstname" />
+      </p>
+      <p>
+        <label>Date of birth: </label>
+        <input type="date" name="birth" />
+      </p>
+      <p>
+        <label>Country: </label>
+        <select name="country" multiple="true">
+          <option value="null">Choose a country</option>
+          <option>Vietnam</option>
+          <option>Italy</option>
+          <option>Saudi Arabia</option>
+        </select>
+      </p>
+      <p>
+        <label>Phone: </label>
+        <input type="text" name="phone" />
+      </p>
+      <p>
+        <label for="observations">Observations: </label><br>
+        <textarea id="observations" name="observations" rows="4" cols="50"></textarea>
+      </p>
+      <input type="submit" />
+    </fieldset>
+    
+  </form>
+
+
+
+</body>
+</html>

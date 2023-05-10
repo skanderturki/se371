@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- general meta tags -->
+  <meta charset="utf-8">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- site specific tags -->
+  <title></title>
+  <script>
+    // This script will not fail as the callback functions (event handlers)
+    // will only be fired after the events occur (document.DOMContentLoaded and window.load)
+    function appendTextElementTo(element, text){
+      const p = document.createElement("p");
+      p.textContent = text;
+      element.appendChild(p);
+    }
+
+    window.addEventListener("load", () => {
+      const msgs = document.getElementById("messages");
+      appendTextElementTo(msgs, "Window Load event fired: " + Date.now());
+    })
+  
+    document.addEventListener("DOMContentLoaded", () => {
+      const msgs = document.getElementById("messages");
+      appendTextElementTo(msgs, "Document DOMContentLoaded event fired: " + Date.now());
+    })
+  
+  </script>
+</head>
+<body>
+  <div id="messages"></div>
+
+  
+</body>
+</html>

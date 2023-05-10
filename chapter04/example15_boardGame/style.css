@@ -1,0 +1,61 @@
+.shadow {
+  background-color: cadetblue;
+}
+
+body {
+  min-width: 480px;
+}
+
+#board td {
+  border: solid 2px black;
+  width: 3rem;
+  height: 3rem;
+  font-size: xx-large;
+  text-align: center;
+}
+#instructions {
+  float: left;
+}
+#board, #information {
+  clear: left;
+}
+article {
+  padding: 10px;
+  margin: 10px;
+}
+
+#table_score td, #table_score th {
+  border: solid 2px black;
+}
+
+#table_score, #board {
+  margin-top: 20px;
+  padding-left: 50px;
+}
+
+#controls {
+  padding: 20px;
+  margin: 20px;
+  /* border: solid 10px cadetblue; */
+  max-width: 580px;
+}
+
+#controls button {
+  background-color: cadetblue;
+  border: none;
+  color: white;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+#phrase_display {
+  clear: left;
+  text-align: center;
+  margin-left: 30px;
+  color:  cadetblue;
+  font: italic small-caps bold 40px/50px Georgia, serif;;
+}

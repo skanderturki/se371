@@ -1,0 +1,9 @@
+<%- include('./partials/head.ejs', {title: title}) %>
+<body>
+  <%- include('./partials/header.ejs', {title: title}) %>
+  <main class="main-block">
+    <%- include('./partials/add_articles_form.ejs', {errors: errors}) %>
+  </main>
+  <%- include('./partials/footer.ejs') %>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<%- include("./partials/header.ejs") %>
+<script src="https://js.stripe.com/v3/"></script>
+<section class="container content-section">
+    <h2 class="section-header">Books</h2>
+    <div class="grid shop-items">
+        <% if( !books ) { %>
+            <p>Could not load data from server (error 500)!</p>
+        <% } else { %>
+            <% books.forEach((b) => { %>
+                <div class="shop-item" data-item-id="<%= b.id %>">
+                    <span class="shop-item-title"><%= b.name %></span>
+                    <img class="shop-item-image" src='<%= b.picture %>'>
+                    <div class="shop-item-details">
+                        <span class="shop-item-price"><%= b.price / 100 %> AED</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+            <% }) %>
+        <% } %>
+    </div>
+</section>
+<section class="container content-section">
+    <h2 class="section-header">CART</h2>
+    <div class="cart-header">
+        <span class="cart-item cart-header cart-column">ITEM</span>
+        <span class="cart-price cart-header cart-column">PRICE</span>
+        <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+    </div>
+    <div id="cart-items">
+    </div>
+    <div class="cart-total">
+        <strong class="cart-total-title">Total</strong>
+        <span id="cart-total-price">0 AED</span>
+    </div>
+    <button class="btn btn-primary btn-purchase" type="button">Buy</button>
+</section>
+<%- include("./partials/footer.ejs") %>

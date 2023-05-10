@@ -1,0 +1,17 @@
+.border {
+  border: 2px solid black;
+}
+
+.table_cell, tr>td {
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+table {
+  margin: 10px;
+}
+
+.background_blue {
+  background-color: lightblue;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript & The DOM</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="lab07.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Javascript & The DOM</h1>
+  </header>
+  <main>
+    <p>List Employees:</p>
+    <fieldset>
+      <label for="countries">Select a country:</label>
+      <div id="countries_radio">
+        <script>
+          fetch('http://localhost:3000/countries')
+              .then(response => response.json())
+              .then(data => {
+                  countries_data = data;
+                  populateCountriesRadio(countries_data);
+                })
+              .then( () => {
+                  setChangeEventListeners();
+              })
+              .catch((reject) => {
+                  console.log("Could not load countries data..." + reject);
+              });
+        </script>
+      </div>
+    </fieldset>
+      <select name="cities" id="cities_selector">
+       
+      </select>
+    <button onclick="run()">Search</button>
+    <article id="employee_table">
+      <table>
+        <thead>
+          <tr class="table_header">
+            <th>id
+            <th>full name
+            <th>address
+        <tbody id="employee_table_body">
+          <!-- insert employee data rows here -->
+      </table>
+    </article>
+  </main>
+</body>
+</html>

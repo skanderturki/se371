@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- general meta tags -->
+  <meta charset="utf-8">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- site specific tags -->
+  <title>Multi-Select</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<form id="form1" method="post" action="/search">
+  <fieldset>
+  <legend></legend>
+    <div>
+      <label for="courses_selector">Select all that apply:</label>
+      <select name="courses" id="courses_selector" multiple>
+        <option value="CS101">CS101</option>
+        <option value="CS102">CS102</option>
+        <option value="CS201">CS201</option>
+        <option value="CS202">CS202</option>
+        <option value="CS301">CS301</option>
+        <option value="CS302">CS302</option>
+        <option value="CS401">CS401</option>
+      </select>
+    </div>
+    <input type="submit" value="Submit">
+  </fieldset>
+</form>
+<br><hr>
+<form id="form2" action="/action" onsubmit="return validateForm()" method="post">
+  <div>
+    <label for="fname">Name</label>
+    <input type="text" name="fname" id="fname">
+  </div>
+  <input type="submit" value="Submit">
+</form>
+  <script>
+
+    // handler for onsubmit event of form1
+    function send(event) {
+      const multi = document.querySelector("#courses_selector");
+      const selected_courses = [];
+
+      for (let i=0; i < multi.options.length; i++) {
+        if (multi.options[i].selected) {
+          selected_courses.push(multi.options[i].textContent);
+        }
+      }
+
+      // A simpler method
+      // for (let i=0; i < multi.selectedOptions.length; i++) {
+      //   selected_courses.push(multi.selectedOptions[i].textContent);
+      // }
+      if(selected_courses.length == 0) {
+        multi.classList.add("invalid");
+        multi.classList.remove("valid");
+        event.preventDefault();
+      } else {
+        multi.classList.add("valid");
+        multi.classList.remove("invalid");
+      }
+    }
+   
+    // handler for onsubmit event of form2
+    function validateForm() {
+      const input = document.forms["form2"]["fname"];
+      let x = input.value;
+      if (x == "") {
+        input.classList.add("invalid");
+        input.classList.remove("valid");
+        return false;
+      } else {
+        input.classList.add("valid");
+        input.classList.remove("invalid");
+        return true;
+      }
+    }
+
+    // register event handler on submit to form1
+    document.addEventListener("DOMContentLoaded", ()=>{
+      const form = document.getElementById("form1");
+      form.addEventListener("submit", send);
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "tuto1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dot-env": "^0.0.1",
+    "express": "^4.18.2",
+    "mongodb": "^5.1.0"
+  }
+}

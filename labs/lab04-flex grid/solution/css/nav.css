@@ -1,0 +1,29 @@
+
+nav {
+  display: flex;
+  gap: 0.625%;
+  margin: 50px auto 0px auto;
+}
+
+nav a {
+  flex: 1;
+  text-decoration: none;
+  outline: none;
+  text-align: center;
+  line-height: 3;
+}
+
+nav a:link,
+nav a:visited,
+nav a:focus {
+  background: var(--bg-tertiary);
+}
+
+nav a:hover {
+  background: orange;
+}
+
+nav a:active {
+  background: darkred;
+  color: white;
+}

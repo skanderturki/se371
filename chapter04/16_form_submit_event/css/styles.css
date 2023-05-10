@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap');
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(240, 234, 226);
+  font-family: 'Roboto Slab', serif;
+}
+
+h1 {
+  margin: 20px;
+  text-align: center;
+}
+
+
+form {
+  border: solid 1px black;
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+}
+
+input:valid {
+  background-color: white;
+}
+
+input:invalid {
+  background-color: lightpink;
+}
+
+input, textarea, select {
+  border: 0;
+  margin: auto;
+  padding: 7px 5px;
+  border-radius: 2px;
+  width: 95%;
+}
+
+input[type="submit"], input[type="reset"], button {
+  border: 0;
+  margin: 30px 0 0 30px;
+  padding: 5px;
+  color:white;
+  width: 100px;
+  cursor: pointer;
+  border-radius: 2px;
+  background-color: #003E6B;
+}
+
+input[type="radio"] {
+  width: 50px;
+  padding: 0;
+  margin: 10px;
+}
+
+label {
+  display: block;
+  margin: 10px 5px 0 5px;
+}
+
+.label_radio {
+  display: inline;
+}
+
+p {
+  margin: 10px 10px 0 5px;
+}
+
+.error {
+  color: red;
+}

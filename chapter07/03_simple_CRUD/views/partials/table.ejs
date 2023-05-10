@@ -1,0 +1,38 @@
+<article id="articles_table">
+  <% if( articles != undefined && articles != null ){ %>
+    <script>
+      const deleteArt = (e) => {
+        let delete_promise = fetch('/v1/articles/' + e.id, { method: 'DELETE'})
+        delete_promise.then(response => response.json())
+                           .then( data => {
+                              window.location = data.redirect;
+                           })
+                           .then(data => {  })
+          .catch((reject) => {
+            document.getElementById("message_delete").textContent = reject;
+          });
+      }
+    </script>
+    <p id="message_delete"> </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Id
+          <th>Name
+          <th>Code
+          <th>Description
+          <th></th>
+      <tbody>
+          <% if(articles.length > 0){ %>
+            <% articles.forEach((article) => { %>
+              <tr>
+                <td><%= article.id %>
+                <td><%= article.name %>
+                <td><%= article.code %>
+                <td><%= article.description %> 
+                <td><button id="<%= article.id %>" onclick="deleteArt(this)" data-artid="<%= article.id %>">Delete</button></td>
+            <% }) %>
+        
+    </table>
+  <% }} %>
+</article>

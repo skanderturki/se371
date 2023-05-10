@@ -1,0 +1,20 @@
+<%- include("./partials/head.ejs") %>
+
+<body>
+
+<%- include("partials/header.ejs") %>
+    <main class="main">
+      <section class="cards-grid">
+
+        <% if( books.length > 0) { %>
+          <% books.forEach( (book) => {%>
+            <%- include('./partials/card', {book: book}); %>
+          <% } )%>
+        <% } %>
+
+      </section>
+      
+    </main>
+  <%- include("./partials/footer.ejs") %>
+  </body>
+</html>

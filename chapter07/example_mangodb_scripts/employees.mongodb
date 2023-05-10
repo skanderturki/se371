@@ -1,0 +1,29 @@
+
+// Select the database to use.
+use('chapter07_01');
+
+
+db.employees.drop();
+
+// Insert a few documents into the sales collection.
+db.employees.insertMany([
+  { '_id': 1, 'name': 'abc', 'age': 29, 'positions': ['Front-end developer'] },
+  { '_id': 2, 'name': 'jkl', 'age': 31, 'positions': ['IT manager']},
+  { '_id': 3, 'name': 'xyz', 'age': 49, 'positions': ['Project Manager'] },
+  { '_id': 4, 'name': 'xyz', 'age': 55, 'positions': ['Accountant'] },
+  { '_id': 5, 'name': 'abc', 'age': 36, 'positions': ['CEO'] },
+  { '_id': 6, 'name': 'def', 'age': 30, 'positions': ['Software developer'] },
+  { '_id': 7, 'name': 'def', 'age': 26, 'positions': ['Software developer'] },
+  { '_id': 8, 'name': 'abc', 'age': 24, 'positions': ['Tester'] },
+]);
+
+// find employees with age greater than or equal to 30
+db.employees.find({ age: { $gte: 30 } });
+
+// Build an aggregation to view total sales for each product in 2014.
+// const aggregation = [
+//   { $match: { age: { $gte: 35 } },
+//   { $group: { _id: '$item', nbOfEmployeesAbove35: {  } } }
+// ];
+
+//db.employees2.aggregate(aggregation);

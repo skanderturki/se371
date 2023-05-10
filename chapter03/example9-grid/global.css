@@ -1,0 +1,10 @@
+:root {
+  --bg-color-main: #431c5d;
+  --bg-color-secondary: rgba(255, 255, 255, 0.8);  
+  --fg-color-main: #e6e9f0;
+  --radius-boxes: 5px;
+  --padding-boxes: 4px;
+  --fontsize-default: 18px;
+  --shadow-color: rgba(0,0,0,0.22);
+  --dropshadow: 6px 5px 20px 1px var(--shadow-color);
+}
