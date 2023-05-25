@@ -33,7 +33,7 @@
                 name="firstName"
                 required
                 pattern="[a-zA-Z]{2,20}"
-                title="2 to 20 letters" /><span id="firstName_err" class="error"></span>
+                title="2 to 20 letters" /><p id="firstName_err" class="error"></p>
             </div>
             <div>
               <label for="lastName">Last Name:</label>
@@ -43,16 +43,16 @@
                 name="lastName"
                 required
                 pattern="[a-zA-Z]{2,20}"
-                title="2 to 20 letters" /><span id="lastName_err" class="error"></span>
+                title="2 to 20 letters" /><p id="lastName_err" class="error"></p>
             </div>
             <div>
               <label for="email">E-Mail:</label>
               <input
-                type="email"
+                type="text"
                 id="email"
                 name="email"
-                required
-                title="An email" /><span id="email_err" class="error"></span>
+                
+                title="An email" /><p id="email_err" class="error"></p>
             </div>
             <div>
               <label for="phoneNumber">Phone #:</label>
@@ -62,7 +62,7 @@
                 name="phoneNumber"
                 required
                 pattern="[0-9]{10,14}"
-                title="a phone number of 10 to 14 digits" /><span id="phoneNumber_err" class="error"></span>
+                title="a phone number of 10 to 14 digits" /><p id="phoneNumber_err" class="error"></p>
             </div>
             <hr>
             <div>
@@ -74,7 +74,7 @@
                 required
                 size="30"
                 pattern="[a-zA-z]{10,30}"
-                title="Address of no more than 30 characters" /><span id="address_err" class="error"></span>
+                title="Address of no more than 30 characters" /><p id="address_err" class="error"></p>
             </div>
             <div>
               <label for="city">City:</label>
@@ -85,7 +85,7 @@
                 required
                 size="20"
                 pattern="[a-zA-Z ]{3,20}"
-                title="Address of no more than 30 characters" /><span id="city_err" class="error"></span>
+                title="Address of no more than 30 characters" /><p id="city_err" class="error"></p>
             </div>
             <div>
               <label for="region">Region:</label>
@@ -113,7 +113,7 @@
                 name="zipCode"
                 required
                 pattern="[0-9]{4,6}"
-                title="a zip code of 4 to 6 digits" /><span id="zipCode_err" class="error"></span>
+                title="a zip code of 4 to 6 digits" /><p id="zipCode_err" class="error"></p>
             </div>
             <hr>
             <div>
@@ -122,7 +122,7 @@
                 type="url"
                 id="website"
                 name="website"
-                title="a URL" /><span id="website_err" class="error"></span>
+                title="a URL" /><p id="website_err" class="error"></p>
             </div>
             <p>Do you have hosting?</p>
             <div>

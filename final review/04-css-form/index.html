@@ -17,22 +17,22 @@
       <form method="post" action="/saveContact">
         <fieldset>
         <legend>Add new contact:</legend>
-          <p>
-            <label>Name:</label>
-            <input type="text" name="name" placeholder="Your name.." required>
-          </p>
-          <p>
-            <label>Last name:</label>
-            <input type="text" name="lastname" placeholder="Your last name.." required>
-          </p>
-          <p>
+          <div>
+            <label for="in_name">Name:</label>
+            <input id="in_name" type="text" name="name" placeholder="Your name.." required>
+          </div>
+          <div>
+            <label for="in_lastname">Last name:</label>
+            <input id="in_lastname" type="text" name="lastname" placeholder="Your last name.." required>
+          </div>
+          <div>
             <label>email:</label>
             <input type="email" name="email" placeholder="contact@domain.ext" required>
-          </p>
-          <p>
+          </div>
+          <div>
             <label>Birth date:</label>
             <input type="date" name="birthdate" required>
-          </p>
+          </div>
           <input type="submit">
         </fileldset>
       </form>

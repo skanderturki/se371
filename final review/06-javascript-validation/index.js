@@ -4,14 +4,14 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", (e) => {
     let email = document.getElementById("email").value;
     if(!email){
-      e.preventDefault();
-      displayErrorMessageByID("email_err", "Incorrect Email format!");
+      e.preventDefault(); // Stop form submission
+      displayErrorMessageByID("email_err", "Email should not be left empty!");
       return;
     } else {
       const email_pattern = /[a-zA-Z0-9\-_]{+}@[a-zA-Z0-9\-_]{+}.[a-zA-Z0-9\-_]{1,10}/
       const valid = email_pattern.test(email);
       if(!valid){
-        e.preventDefault();
+        e.preventDefault(); // Stop form submission
         displayErrorMessageByID("email_err", "Incorrect Email format!");
         return;
       }

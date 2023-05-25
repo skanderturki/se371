@@ -1,36 +1,33 @@
 const Item = require('../models/Item');
 
-var ERROR = "";
 
 const getItems = (request, response) => {
   Item.find()
     .then( (result) => {
-      response.render('index', {title: "Homepage", items: result, error: ERROR});
-      ERROR = "";
+      response.render('index', {title: "Homepage", items: result, error: null});
     })
     .catch( (err) => {
-      ERROR = "Data Couldn't be loaded!";
-      response.render('index', {title: "Homepage", items: [], error: ERROR});
+      response.render('index', {title: "Homepage", items: [], error: "Data Couldn't be loaded!"});
     });
 }
 
 const addItem = (request, response) => {
   // get the data from the POST request
-  let name = request.body.name;
-  let description = request.body.description;
-  let filename = request.body.filename;
+  // const name = request.body.name;
+  // const description = request.body.description;
+  // const filename = request.body.filename;
+  const { name, description, filename } = request.body;
+  
   // Create an object with that data
   let newItem = new Item({name: name, description: description, filename: filename});
 
   // Save the object to the database
   newItem.save()
     .then( (result) => {
-      ERROR = "";
       response.redirect('/');
     })
     .catch( (err) => {
-      ERROR = "Data Couldn't be Added!";
-      response.redirect('/');
+      response.render('index', {title: "Homepage", items: [], error: "Couldn't save Item to database"});
     });
 }
 
