@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- general meta tags -->
+  <meta charset="utf-8">
+  <meta name="author" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- site specific tags -->
+  <title></title>
+  <!-- style sheets -->
+  <link rel="stylesheet" href="form.css">
+</head>
+<body>
+  <main>
+    <section>
+      <form method="post" action="/saveContact">
+        <fieldset>
+        <legend>Add new contact:</legend>
+          <p>
+            <label>Name:</label>
+            <input type="text" name="name" placeholder="Your name.." required>
+          </p>
+          <p>
+            <label>Last name:</label>
+            <input type="text" name="lastname" placeholder="Your last name.." required>
+          </p>
+          <p>
+            <label>email:</label>
+            <input type="email" name="email" placeholder="contact@domain.ext" required>
+          </p>
+          <p>
+            <label>Birth date:</label>
+            <input type="date" name="birthdate" required>
+          </p>
+          <input type="submit">
+        </fileldset>
+      </form>
+    </section>
+  </main>
+  <footer>
+    
+  </footer>
+</body>
+</html>

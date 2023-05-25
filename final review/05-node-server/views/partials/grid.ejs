@@ -1,0 +1,14 @@
+  <section class="items-grid">
+    <% items.forEach( (item) => { %>
+      <article class="title-flex-column">
+        <div class="title-flex-top">
+          <img class="title-flex-top-img" src="./img/<%= item.filename %>" alt="<%= item.name %>">
+          <h1 class="title-flex-h"><%= item.name %></h1>
+          <h2 class="title-flex-h"><%= item.description %></h2>
+        </div>
+        <div class="title-flex-footer">
+          <img class="title-flex-footer-img" src="./img/play.svg" alt="Play">
+        </div>
+      </article>
+    <% }); %>
+  </section>

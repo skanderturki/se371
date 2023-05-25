@@ -1,0 +1,25 @@
+.title-flex-column {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  align-items: center; 
+  height: 400px;
+  max-width:300px;
+}
+
+.title-flex-column img {
+  width: 100px;
+}
+
+.title-flex-top {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.title-flex-footer {
+  margin-top: auto;
+}
+
+.title-flex-footer img {
+  width: 60px;
+}

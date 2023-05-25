@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- general meta tags -->
+  <meta charset="utf-8">
+  <meta name="author" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- site specific tags -->
+  <title></title>
+  <!-- style sheets -->
+  <link rel="stylesheet" href="/css/flex-row.css">
+  <link rel="stylesheet" href="/css/card.css">
+  <link rel="stylesheet" href="/css/grid.css">
+  <link rel="stylesheet" href="/css/form.css">
+</head>
+<body>
+  <section>
+    <div class="title-flex-row">
+      <img class="title-flex-img" src="/img/factory.svg" alt="Factory">
+      <div>
+        <h1 class="title-flex-h">Factory:</h1>
+        <h2 class="title-flex-h"><%= title %></h2>
+      </div>
+      <img class="title-flex-img" src="/img/loader.svg" alt="Loader">
+    </div>
+  </section>
+  <h2 style="color: red;"><%= error %></h2>
+  <%- include('./partials/form.ejs') %>
+  <%- include('./partials/grid.ejs', {items: items}) %>
+</body>
+</html>

@@ -1,0 +1,27 @@
+.title-flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; 
+  height: 200px;
+}
+
+.title-flex-img {
+  height: 100px;
+  width: 100px;
+}
+
+.title-flex-h {
+  margin: 10px;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .title-flex-row {
+    flex-direction: column;
+  }
+  .title-flex-img {
+    height: 50px;
+    width: 50px;
+  }
+}
