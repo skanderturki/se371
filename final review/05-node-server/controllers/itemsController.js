@@ -11,6 +11,17 @@ const getItems = (request, response) => {
     });
 }
 
+const getItemsByName = (request, response) => {
+  const name = request.params.name;
+  Item.find({'name': name})
+    .then( (result) => {
+      response.render('index', {title: "Homepage", items: result, error: null});
+    })
+    .catch( (err) => {
+      response.render('index', {title: "Homepage", items: [], error: "Data Couldn't be loaded!"});
+    });
+}
+
 const addItem = (request, response) => {
   // get the data from the POST request
   // const name = request.body.name;
@@ -31,4 +42,4 @@ const addItem = (request, response) => {
     });
 }
 
-module.exports = {getItems, addItem};
+module.exports = {getItems, addItem, getItemsByName};

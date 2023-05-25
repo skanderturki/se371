@@ -12,6 +12,8 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 app.get('/', itemsController.getItems);
+app.get('/items/name/:name', itemsController.getItemsByName);
+
 app.post('/items/addItem', itemsController.addItem);
 
 mongoose.set('strictQuery', false);
