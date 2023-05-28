@@ -1,9 +1,9 @@
-.vscode
+.vscode/
 
 .env
 
-.zip
+*.zip
 
-.rar
+*.rar
 
-node_modules
+**/node_modules/
