@@ -1,50 +1,65 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Lab 01</title>
   <style>
 
   </style>
 </head>
+
 <body>
   <form method="get" action="/register">
     <fieldset>
       <legend>Registration Form</legend>
-      <p>
+      <div>
         <label>ID: </label>
-        <input type="text" name="id" maxlength="4"/>
-      </p>
-      <p>
+        <input type="text" name="id" maxlength="4" />
+      </div>
+      <div>
         <label>First Name: </label>
         <input type="text" name="firstname" />
-      </p>
-      <p>
+      </div>
+      <div>
         <label>Date of birth: </label>
         <input type="date" name="birth" />
-      </p>
-      <p>
+      </div>
+      <div>
         <label>Country: </label>
         <select name="country" multiple="true">
-          <option value="null">Choose a country</option>
-          <option>Vietnam</option>
-          <option>Italy</option>
-          <option>Saudi Arabia</option>
+          <option value="-1">Choose a country</option>
+          <option value="0">Vietnam</option>
+          <option value="1">Italy</option>
+          <option value="2">Saudi Arabia</option>
         </select>
-      </p>
-      <p>
+      </div>
+      <div>
         <label>Phone: </label>
         <input type="text" name="phone" />
-      </p>
-      <p>
+      </div>
+      <div>
         <label for="observations">Observations: </label><br>
         <textarea id="observations" name="observations" rows="4" cols="50"></textarea>
-      </p>
+      </div>
+      <div>
+        <label for="myBrowser">Choose a browser from this list:</label>
+        <input list="browsers" id="myBrowser" name="myBrowser" />
+        <datalist id="browsers">
+          <option value="Chrome"></option>
+          <option value="Firefox"></option>
+          <option value="Opera"></option>
+          <option value="Safari"></option>
+          <option value="Microsoft Edge"></option>
+        </datalist>
+      </div>
+
       <input type="submit" />
     </fieldset>
-    
+
   </form>
 
 
 
 </body>
+
 </html>
