@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- general meta tags -->
+  <meta charset="utf-8">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- site specific tags -->
+  <title>JSON data as Table</title>
+  <style>
+    table, td, th {
+      border: solid 2px #5d68ba;
+      border-collapse: collapse;
+      margin: 20px;
+      padding: 2px 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    const countries = ['{"id": "01", "name": "KSA"}',
+                        '{"id": "02", "name": "Japan"}',
+                        '{"id": "03", "name": "Oman"}'];
+    document.write('<table><tr><th>ID</th><th>Country</th></tr>');
+    for (let c of countries) {
+      let co = JSON.parse(c);
+      console.log(co);
+      document.write('<tr><td>' + co.id + '</td><td>' 
+        + co.name + '</td></tr>')
+    }
+    document.write('</table>');
+
+  </script>
+</body>
+
+</html>

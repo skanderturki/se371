@@ -25,5 +25,5 @@ class PhoneNumber {
   }
 };
 
-let phoneA = new PhoneNumber(4512458235);
+let phoneA = new PhoneNumber("4512458a235");
 console.log(`The phone number is ${phoneA}`);

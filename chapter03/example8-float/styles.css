@@ -1,11 +1,16 @@
 body {
   padding: 3%;
+  font-size: 1.2vw;
 }
 
 .left {
   float: left;
   width: 15%;
   margin: 10px;
+}
+
+.img {
+  display:block;
 }
 
 .right {
@@ -25,7 +30,7 @@ body {
 
 #site-title {
   font-style: oblique;
-  font-size: 4rem;
+  font-size: 10vw;
   text-align: center;
   background-color: blue;
   color: white;

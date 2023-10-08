@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap');
 
 html, body {
-  margin: 0;
+  margin: 20px;
   width: 100%;
   height: 100%;
   background-color: rgb(233, 227, 219);
@@ -18,9 +18,7 @@ caption {
 
 table {
   font-size: 0.8em;
-  border-collapse: collapse;
-  border-top: 4px solid £DCA806;
-  border-bottom: 1px solid white;
+  border-collapse: collapse; /* no effect as this is already done by the CSS reset */
   text-align: left;
 }
 
@@ -37,11 +35,11 @@ tbody th {
 
 tbody tr {
   background-color: #F1F1F1;
-  border-bottom: 1px solid white;
   color: #6E6E6E;
 }
 
 tbody td {
+  border: solid 1px #9e9e9e;
   padding: 0.75em;
 }
 
