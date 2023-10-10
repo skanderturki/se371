@@ -1,40 +1,23 @@
-
-
-// Question 1: create an article using innerHTML
-const makeArticle = function(displayElement, position, name, lastName, email) {
-  let s = '<article><h2>Position: ' + position + '</h2>'
-          + '<p>Name: ' + name + '</p>'
-          + '<p>Last Name: ' + lastName + '</p>'
-          + '<p>Email: ' + email + '</p>'
-          + '</article>';
-  document.getElementById(displayElement).innerHTML = s;
+function Employee (position, fname, lname, email) {
+  this.position = position;
+  this.fname = fname;
+  this.lname = lname;
+  this.email = email;
+  this.toHTMLArticle = () => `<article><h2>Position: ${this.position}</h2><p>Name: ${this.fname}</p>
+                    <p>Last Name: ${this.lname}</p><p>Email: ${this.email}</p></article>`;
 }
 
-// Question 1:(better) create an article using innerHTML
-const makeArticleV2 = function(displayElement, position, name, lastName, email) {
-  let s = `<article><h2>Position: ${position}</h2>
-            <p>Name: ${name}</p>
-            <p>Last Name: ${lastName}</p>
-            <p>Email: ${email}</p>
-          </article>`;
-  console.log(s);
-  document.getElementById(displayElement).innerHTML = s;
+let makeArticle = (nodeId, position, fname, lname, email) =>  {
+  let node = document.getElementById(nodeId);
+  let employee = new Employee(position, fname, lname, email);
+  node.innerHTML = employee.toHTMLArticle();
 }
 
-// If the lement with the given id is found we return its value otherwise we return a message.
-function getValueByID(id) {
-  let element = document.getElementById(id);
-  if(element)
-    return element.value; 
-  else
-    throw new Error("Element not found!");
+let getValueByID = (nodeId) => {
+  let node = document.getElementById(nodeId);
+  if(node){
+    return node.value;
+  }
+  return null;
 }
 
-// Clears the element that has the given id if any.
-function clearElementByID(id){
-  let element = document.getElementById(id);
-  if(element)
-    element.innerHTML = ""
-  else
-    throw new Error("Element to clear not found!");
-}
