@@ -1,58 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <title> Call JavaScript function on page load. </title>
-   <style>
-    .shadow {
-      background-color: cadetblue;
-    }
-   </style>
-</head>
-<body>
-   <h2> Methods to add event handlers. </h2>
+  <head>
+    <title>Call JavaScript function on page load.</title>
+    <style>
+      .shadow {
+        background-color: cadetblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Methods to add event handlers.</h2>
 
-   <button onclick="fw('button');">Fire</button>
+    <button onclick="fw('button');">Fire</button>
 
-   <div id="menu">
+    <div id="menu">
       <ul>
         <li>Homepage</li>
         <li>Contact us</li>
         <li>About</li>
       </ul>
-   </div>
+    </div>
 
-   <script type="text/javascript">
-      // document.onDOMContentLoaded = fw('document');
+    <script type="text/javascript">
+      document.onDOMContentLoaded = fw("document");
 
-      // window.onload = fw('window');
+      window.onload = fw("window");
 
-      // function fw(sender) {
-      //    alert( `The sender is ${sender}.` );
-      //    //alert( "The sender is " + sender + "." );    // equivalent syntax
-      // }
+      function fw(sender) {
+        alert(`The sender is ${sender}.`);
+      }
 
-      document.addEventListener('DOMContentLoaded', 
-                                  function(e) {
-                                    const menu_li_items = document.querySelectorAll("#menu li");
-                                    for (let item of menu_li_items) {
-                                      item.addEventListener("click", function (e) {
-                                                                        item.classList.toggle('shadow');
-                                                                        alert(e.target + "; " + e.type + " ; " 
-                                                                                + e.clientX + ":" + e.clientY);
-                                                                        //e.target.classList.toggle('shadow');
-                                                                      }
-                                                            );
-                                    }
-                                    const heading = document.querySelector("h2");
-                                    heading.addEventListener('click', function(e) {
-                                                                        heading.classList.toggle('shadow');
-                                                                        alert(e.target + "; " + e.type + " ; " 
-                                                                                + e.clientX + ":" + e.clientY);
-                                                                      }
-                                                            );
-                                  }
-                                );
-
-   </script>
-</body>
+      document.addEventListener("DOMContentLoaded", function (e) {
+        const menu_li_items = document.querySelectorAll("#menu li");
+        for (let item of menu_li_items) {
+          item.addEventListener("click", function (e) {
+            item.classList.toggle("shadow");
+            alert(
+              e.target + "; " + e.type + " ; " + e.clientX + ":" + e.clientY
+            );
+            //e.target.classList.toggle('shadow');
+          });
+        }
+        const heading = document.querySelector("h2");
+        heading.addEventListener("click", function (e) {
+          heading.classList.toggle("shadow");
+          alert(e.target + "; " + e.type + " ; " + e.clientX + ":" + e.clientY);
+        });
+      });
+    </script>
+  </body>
 </html>

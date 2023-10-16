@@ -4,9 +4,9 @@ const createHeaderRow = () => {
   // Build table header : * A B C D E F
   const thead = document.getElementById("table_head");
   const tr = document.createElement("tr");
-  tr.appendChild(createNodeOfTypeWithText("td", "\\", "border"));
+  tr.appendChild(createNodeOfTypeWithText("th", "", "border"));
   for(let c of table_columns){
-    tr.appendChild(createNodeOfTypeWithText("td", c, "border"));
+    tr.appendChild(createNodeOfTypeWithText("th", c, "border"));
   }
   thead.appendChild(tr);
 }
@@ -24,7 +24,8 @@ const createTableBody = () => {
 }
 
 // A function that creates a new node of the given type 
-// with the given textual node and returns that new node.
+// with the given textual node and returns that new node
+// then it applies the given classes to the node
 const createNodeOfTypeWithText = (type, text, ...classNames) => {
   const node = document.createElement(type);
   if(!node) throw new Error(`Unable to create HTML element of type ${type}`);
