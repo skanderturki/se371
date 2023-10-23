@@ -24,8 +24,8 @@ const createTableBody = () => {
 }
 
 // A function that creates a new node of the given type 
-// with the given textual node and returns that new node
-// then it applies the given classes to the node
+// with the given textual node then it applies the given classes to the node
+// and returns that new node
 const createNodeOfTypeWithText = (type, text, ...classNames) => {
   const node = document.createElement(type);
   if(!node) throw new Error(`Unable to create HTML element of type ${type}`);
