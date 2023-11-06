@@ -28,11 +28,17 @@ const writePromise = (fileToWrite, newContent, flag) => {
 }
 
 readPromise('./content/first.txt', 'utf8')
-  .then((result) =>{
-    writePromise('./content/result.txt', `${result}\n`, { flag: 'a' });
+.then((result) =>{
+  writePromise('./content/result.txt', `${result}\n`, { flag: 'a' })
+  .then((result) => {
+    console.log(`Successfully wrote into file.`);
   })
-  .catch((err) => {
-    console.log(err);
-  })
+  .catch((error) => {
+    console.log(`Writing into file throwed an error: ${error}`);
+  });
+})
+.catch((err) => {
+  console.log(err);
+})
 
 console.log('starting next task...');

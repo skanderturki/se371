@@ -362,13 +362,15 @@
     },
     {
       "name": "Level_8",
-      "courses": {
-        "name": "SE_492",
-        "description": "Co-op in Software Engineering",
-        "code": "SE_492",
-        "credits": "10",
-        "type": "College Requirement"
-      }
+      "courses": [
+        {
+          "name": "SE_492",
+          "description": "Co-op in Software Engineering",
+          "code": "SE_492",
+          "credits": "10",
+          "type": "College Requirement"
+        }
+      ]
     }
   ]
 }

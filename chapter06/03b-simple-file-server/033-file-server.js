@@ -7,6 +7,7 @@ const fs = require("fs");
 // our HTTP server now returns requested files
 const server = http.createServer(function (request, response) {
         // get the filename from the URL
+        console.log(`Parsed URL.pathname: ${url.parse(request.url).pathname}`);
         let requestedFile = url.parse(request.url).pathname;
         // now turn that into a file system file name by adding the current
         // local folder path in front of the filename

@@ -26,22 +26,6 @@ const writeText = (path, text) => {
   })
 }
 
-// // chain promises 
-// let first, second;
-// getText('./content/first.txt', 'utf8')
-//     .then((data) => {
-//       first = data
-//       getText('./content/second.txt', 'utf8')
-//       .then((data) => {
-//         second = data
-//         writeText('./content/result-await.txt', `${first} ${second}` + "\n",
-//         { flag: 'a' }
-//       )
-//       })
-//     })
-//     .catch((error) => console.log(error));
-
-
 // chain promises aync/await
 const start = async () => {
   try {

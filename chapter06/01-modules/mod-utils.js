@@ -3,4 +3,4 @@ const saySelem = (name) => {
 }
 
 // export default
-module.exports = saySelem ;
+module.exports = saySelem;
