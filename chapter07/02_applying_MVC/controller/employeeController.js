@@ -1,4 +1,4 @@
-const Employee = require('../schema/employee');
+const Employee = require('../model/employee');
 
 const add_employee = (request, response) => {
   let name = request.params.name;

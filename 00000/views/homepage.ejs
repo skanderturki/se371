@@ -1,0 +1,14 @@
+<%- include("./partials/header.ejs") %>
+
+      <section>
+        <% if( books && books.length > 0 ){ %>
+          <% books.forEach( book => { %>
+            <h2><%= book.title %></h2>
+            <p><%= book.description %></p>
+          <% }); %>
+        <% } else { %>
+          <p>There is no data to display....</p>
+        <% }; %>
+      </section>
+
+<%- include("./partials/footer.ejs") %>

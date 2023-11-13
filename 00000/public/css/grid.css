@@ -1,0 +1,59 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: var(--bg-tertiary);
+  margin: 20px;
+}
+
+.card img {
+  width: 70%;
+  margin: auto;
+}
+
+.card h2, .card p {
+  text-align: center;
+  padding: 10px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* CSS */
+.card button {
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.card button:hover,
+.card button:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742;
+}
+
+.card button:active {
+  opacity: .5;
+}

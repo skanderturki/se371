@@ -2,7 +2,7 @@ const express = require('express');
 require('dotenv').config();
 
 const mongoose = require('mongoose');
-const Employee = require('./schema/employee');
+const Employee = require('./model/employee');
 
 // Create some Employee objects from model
 let emp1 = new Employee({name: 'Nafaa', age: 46, positions: ['ceo']});

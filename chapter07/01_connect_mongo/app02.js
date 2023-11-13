@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 require('dotenv').config();
 
 const mongoose = require('mongoose');
-const Employee = require('./schema/employee');
+const Employee = require('./model/employee');
 
 // express app
 const app = express();
@@ -38,7 +38,7 @@ mongoose.connect(process.env.MONGO_URI)
       .catch( (err) => console.log(err));
  });
 
- app.post('/v2/employees/age/:age/positions/:positions', (request, response) => {
+ app.post('/v1/employees/age/:age/positions/:positions', (request, response) => {
 
   let age = request.params.age;
   let positions = request.params.positions.split(";");
