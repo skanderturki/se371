@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 let employeeSchema = new mongoose.Schema({
   name: { type: String, required: true},
   age: { type: Number},
-  positions: { type: [String]}    // The type here is an array of strings.
+  positions: { type: [String]}   // The type here is an array of strings.
 });
 
 // Now export the schema to be used by the app
