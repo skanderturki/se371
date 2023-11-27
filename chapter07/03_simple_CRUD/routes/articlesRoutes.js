@@ -8,7 +8,7 @@ const router = express.Router();
 
 // Open page routes
 router.get('/add', articlesController.open_add_article_form);
-router.get('/search', articlesController.open_search_article_page);
+router.get('/search', articlesController.find_articles);
 
 // read routes
 router.get('/', articlesController.find_articles);
@@ -21,7 +21,9 @@ router.post('/', [ check('name').isLength({ min: 3 }),
                   , articlesController.add_article
             );
 
-//router.update('/update', articlesController.update_article);
+router.put('/id/:id/code/:code/name/:name/desc/:desc', articlesController.update_article);
 router.delete('/:id', articlesController.delete_article);
+
+
 
 module.exports = router;

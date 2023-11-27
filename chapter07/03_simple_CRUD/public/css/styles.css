@@ -90,6 +90,7 @@ button:hover {
 #articles_table td, #articles_table th {
   border: 1px solid #ddd;
   padding: 8px;
+  min-width: 200px;
 }
 
 #articles_table tr:nth-child(even){background-color: #f2f2f2;}
@@ -102,6 +103,10 @@ button:hover {
   text-align: left;
   background-color: #04AA6D;
   color: white;
+}
+
+.first-column {
+  display: none;
 }
 
 .topnav {

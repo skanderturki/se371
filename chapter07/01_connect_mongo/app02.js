@@ -10,8 +10,12 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.get('/', (request, response) => {
+  response.send('<h1>OK</h1>');
+});
+
+
 app.post('/v1/employees/name/:name/age/:age/positions/:positions', (request, response) => {
-console.log(request.params);
 let name = request.params.name;
 let age = request.params.age;
 let positions = request.params.positions.split(";");
@@ -88,7 +92,7 @@ app.get('/v1/employees/positions/:position', (request, response) => {
 
 app.get('/v2/employees/positions/:position', (request, response) => {
   Employee.find({ positions: request.params.position })
-  .sort({ age : 1 })
+  .sort({ age : -1 })
     .then( (result) => {
       response.send(result);
     })

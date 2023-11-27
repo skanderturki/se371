@@ -7,16 +7,12 @@ const open_add_article_form = (request, response) => {
   response.render('add_article_form', {title: 'Add Article', errors: []});
 }
 
-const open_search_article_page = (request, response) => {
-  response.render('search_articles', {title: 'Search Article', articles: []});
-}
-
 // read functions
 const find_articles = (request, response) => {
   let name = request.query.name;
   let code = request.query.code;
-  let nameRegex = (name.length > 0)? new RegExp(name, 'i') : null;
-  let codeRegex = (code.length > 0)? new RegExp(code, 'i') : null;
+  let nameRegex = (name && name.length > 0)? new RegExp(name, 'i') : null;
+  let codeRegex = (code && code.length > 0)? new RegExp(code, 'i') : null;
   let search = {};
   if( nameRegex != null && codeRegex != null){
     search = { $or: [ { 'name': { "$regex": nameRegex } },
@@ -27,11 +23,11 @@ const find_articles = (request, response) => {
   } else if(nameRegex != null){
     search = { 'name': { "$regex": nameRegex } };
   } else {
-    return response.status(204).end(); // no data, do nothing
+    search = {};
   }
   Article.find(search)
     .then((data) => {
-      //if(response._closed == false)
+        data = data? data: [];
         response.render('search_articles', {title: "Search Articles", articles: data});
     })
     .catch((err) => { console.log(err) })
@@ -58,7 +54,6 @@ const get_articles_byCategory = (request, response) => {
 const add_article = (request, response) => {
   const errors = validationResult(request);
   if (!errors.isEmpty()) {
-     //return response.status(422).json({ errors: errors.array() });
     return  response.render('add_article_form', {title: 'Add Article', errors: errors.array()});
   }
 
@@ -79,7 +74,18 @@ const add_article = (request, response) => {
 };
 
 const update_article = (request, response) => {
-
+  const filter = { id: request.params.id }; 
+  const update = {  code: request.params.code,
+                    name: request.params.name,
+                    desc:request.params.desc
+                  }; 
+  
+  Article.findOneAndUpdate(filter, update)
+    .then((result) => {
+      console.log(`Article updated from database: id -> ${result._id}`);
+      response.json({ redirect: '/v1/articles/search'});
+    })
+    .catch((err) => { console.log(err) });
 };
 
 const delete_article = (request, response) => {
@@ -93,7 +99,7 @@ const delete_article = (request, response) => {
     .catch((err) => { console.log(err) });
 };
 
-module.exports = {open_add_article_form, open_search_article_page,
+module.exports = {open_add_article_form,
                   find_articles, get_articles_byID, get_articles_byCategory, 
                   add_article, update_article, delete_article
                 };

@@ -20,17 +20,7 @@ app.set('view engine', 'ejs');
 // Use the 'public' folder as static
 app.use(express.static('public'));
 
-// Connect to database then start server
-mongoose.connect(process.env.MONGO_URI)
-  .then((result) => {
-    console.log("Connected to database...");
-    app.listen(process.env.port, 'localhost', () => {
-      console.log(`Listening on port ${process.env.PORT}`);
-    });
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+
 
 // Serve homepage
 app.get('/', (request, response) => {
@@ -44,3 +34,15 @@ app.use('/v1/articles', articlesRoutes);
 app.use((request, response) => {
   response.status(400).render('404', { title: '404' });
 });
+
+// Connect to database then start server
+mongoose.connect(process.env.MONGO_URI)
+  .then((result) => {
+    console.log("Connected to database...");
+    app.listen(process.env.port, 'localhost', () => {
+      console.log(`Listening on port ${process.env.PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.log(err);
+  });
