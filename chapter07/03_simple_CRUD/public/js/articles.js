@@ -2,10 +2,9 @@
 const deleteArt = (e) => {
   let delete_promise = fetch('/v1/articles/' + e.dataset.artid, { method: 'DELETE'})
   delete_promise.then(response => response.json())
-                     .then( data => {
-                        window.location = data.redirect;
+                     .then(data => {
+                        alert(`Article deleted successfully!`);
                      })
-                     .then(data => {  })
     .catch((reject) => {
       document.getElementById("message").textContent = reject;
     });
@@ -20,7 +19,7 @@ const updateArt = (e) => {
                              , { method: 'PUT'})
   update_promise.then(response => response.json())
                      .then( data => {
-                        window.location = data.redirect;
+                        alert(`Article updates successfully!`);
                      })
                      .then(data => {  })
     .catch((reject) => {

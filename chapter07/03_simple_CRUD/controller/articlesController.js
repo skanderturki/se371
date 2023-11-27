@@ -83,7 +83,7 @@ const update_article = (request, response) => {
   Article.findOneAndUpdate(filter, update)
     .then((result) => {
       console.log(`Article updated from database: id -> ${result._id}`);
-      response.json({ redirect: '/v1/articles/search'});
+      response.redirect('/v1/articles/search');
     })
     .catch((err) => { console.log(err) });
 };
@@ -94,7 +94,7 @@ const delete_article = (request, response) => {
   Article.findByIdAndDelete(id)
     .then((result) => {
       console.log(`Article deleted from database: id -> ${result._id}`);
-      response.json({ redirect: '/v1/articles/search'});
+      response.redirect('/v1/articles/search');
     })
     .catch((err) => { console.log(err) });
 };
