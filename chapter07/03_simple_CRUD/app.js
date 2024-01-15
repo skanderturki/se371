@@ -20,8 +20,6 @@ app.set('view engine', 'ejs');
 // Use the 'public' folder as static
 app.use(express.static('public'));
 
-
-
 // Serve homepage
 app.get('/', (request, response) => {
   response.render('index', { title: 'Home', articles: undefined});

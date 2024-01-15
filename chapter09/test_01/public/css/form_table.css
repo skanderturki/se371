@@ -1,0 +1,72 @@
+
+form {
+  border: 1px solid black;
+  width: 80%;
+  padding: 10px;
+  margin: 20px auto 20px auto;
+}
+
+.formItem {
+  margin: 5px 20px 5px 20px;
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+form input, form select {
+  width: 70%;
+}
+
+button, input[type=submit], input[type=button]  {
+  width: 30%;
+  margin: 5px auto 5px auto;
+  background-color: rgb(110, 136, 220);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+fieldset {
+  width: 100%;
+  text-align: center;
+}
+
+legend {
+  text-align: center;
+  font-weight: 600;
+  padding: 3px 6px;
+}
+
+
+table {
+  border: 1px solid black;
+  margin: 30px auto 30px auto;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+table td, table th {
+  padding: 5px;
+  border: 1px solid #ddd;
+  padding: 8px;
+  min-width: 100px;
+}
+
+
+table tr:nth-child(even){background-color: #f2f2f2;}
+
+table tr:hover {background-color: #ddd;}
+
+table th, .total td {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:  rgb(110, 136, 220);
+  color: white;
+}

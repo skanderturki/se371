@@ -1,9 +1,12 @@
 <article "form-article">
     <% errors.forEach( (error) => { %>
-      <p> <%= error.param + " : " + error.msg%> </p>
-      <p> <% console.log(error) %> </p>
+      <p> <%= error.param + " : " + error.msg %> </p>
     <% }); %>
+
   <div id="form-main"></div>
+    <% if(message) { %>
+        <p class="msg"><%= message %></p>
+    <% } %>
     <form id="add_form" method="post" action="/v1/articles/">
       <fieldset class="form-article">
       <legend>Add Article</legend>

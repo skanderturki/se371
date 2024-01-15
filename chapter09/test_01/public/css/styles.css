@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+  margin: 5px;
+  padding: 5px;
+  font-size: 20px;
+}
+
+html {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+main {
+  min-height: 50vw;
+}
+
+.errorMessage {
+  font-weight: 700;
+  font-size: x-large;
+  color: red;
+  text-align: center;
+}
+
+#error_404 {
+  font-size: 30px;
+  text-align: center;
+  margin: 50px;
+  padding: 50px;
+}

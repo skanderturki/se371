@@ -4,7 +4,7 @@ const { validationResult } = require('express-validator');
 
 // Open web pages routes
 const open_add_article_form = (request, response) => {
-  response.render('add_article_form', {title: 'Add Article', errors: []});
+  response.render('add_article_form', {title: 'Add Article', errors: [], message: ''});
 }
 
 // read functions
@@ -27,7 +27,6 @@ const find_articles = (request, response) => {
   }
   Article.find(search)
     .then((data) => {
-        data = data? data: [];
         response.render('search_articles', {title: "Search Articles", articles: data});
     })
     .catch((err) => { console.log(err) })
@@ -54,22 +53,22 @@ const get_articles_byCategory = (request, response) => {
 const add_article = (request, response) => {
   const errors = validationResult(request);
   if (!errors.isEmpty()) {
-    return  response.render('add_article_form', {title: 'Add Article', errors: errors.array()});
+    return response.render('add_article_form', {title: 'Add Article', errors: errors.array(),  message: ''});
   }
 
   let name = request.body.name;
   let code = request.body.code;
   let description = request.body.description;
 
-  if(response._closed != true){
-    let art = new Article({ name: name, code: code, description: description });
-    art.save()
-      .then((data) => {
-        console.log(`Article saved to database: id -> ${data._id}`);
-        response.redirect('/v1/articles/add');
-      })
-      .catch((err) => { console.log(err) });
-  }
+
+  let art = new Article({ name: name, code: code, description: description });
+  art.save()
+    .then((data) => {
+      console.log(`Article saved to database: id -> ${data._id}`);
+      response.render('add_article_form', {title: 'Add Article', errors: [], message: 'Item successfully added'});
+      //response.redirect('/v1/articles/add');
+    })
+    .catch((err) => { console.log(err) });
   
 };
 
@@ -77,7 +76,7 @@ const update_article = (request, response) => {
   const filter = { id: request.params.id }; 
   const update = {  code: request.params.code,
                     name: request.params.name,
-                    desc:request.params.desc
+                    description: request.params.desc
                   }; 
   
   Article.findOneAndUpdate(filter, update)

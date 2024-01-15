@@ -143,3 +143,16 @@ button:hover {
   }
 
 }
+
+.msg {
+  color: white;
+  margin: 20px;
+  font-weight: 800;
+  animation-name: fade;
+  animation-duration: 5s;
+}
+
+@keyframes fade {
+  0%   {color: green;}
+  100% {color: white;}
+}

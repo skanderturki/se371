@@ -8,7 +8,7 @@ const landing_page = (req, res) => {
 
 const login_get = (req, res) => {
   const error = req.session.error;
-  delete req.session.error;
+  req.session.error = undefined;
   res.render("login", { err: error });
 };
 
@@ -50,12 +50,12 @@ const register_post = async (req, res) => {
     return res.redirect("/register");
   }
 
-  const hasdPsw = await bcrypt.hash(password, 12);
+  const hashPsw = await bcrypt.hash(password, 12);
 
   user = new User({
-    username,
-    email,
-    password: hasdPsw,
+    username: username,
+    email: email,
+    password: hashPsw,
   });
 
   await user.save();

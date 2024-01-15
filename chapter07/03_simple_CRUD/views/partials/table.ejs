@@ -18,6 +18,7 @@
                 <td contenteditable="true"><%= article.description %> 
                 <td><button onclick="deleteArt(this)" data-artid="<%= article.id %>">Delete</button></td>
                 <td><button onclick="updateArt(this)" data-artid="<%= article.id %>">Update</button></td>
+              </tr>
             <% }) %>
     </table>
   <% }} %>
