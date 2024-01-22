@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- site specific tags -->
   <title>Register</title>
-  <link rel="stylesheet" href="./resources/css/styles2.css">
+  <link rel="stylesheet" href="./resources/css/styles.css">
 </head>
 <body>
   <form method="post" action="/register">
@@ -17,7 +17,6 @@
       <div>
         <label for="textinput">Text input:</label>
         <input type="text" id="textinput" name="textinput" placeholder="Enter some text here." required />
-        <span>Error message</span>
       </div>
       <div>
         <label for="story">Text Area input:</label>
@@ -51,18 +50,19 @@
         <label for="choices">Choices Input:</label>
         <select name="choices" id="choices">
           <optgroup label="First Group">
-            <option value="1">First</option>
-            <option value="2" selected>Second</option>
-            <option value="3">Third</option>
+            <option >First</option>
+            <option  selected>Second</option>
+            <option >Third</option>
           </optgroup>
           <optgroup label="Second Group">
-            <option value="4">Fourth</option>
-            <option value="5">Fifth</option>
+            <option >Fourth</option>
+            <option >Fifth</option>
           </optgroup>
         </select>
       </div>
       <fieldset>
         <legend>Radio input:</legend>
+        <input type="date" name="dob">
         <div>
           <input type="radio" id="radio1" name="city" value="1" checked>
           <label for="radio1">Riyadh</label>
@@ -99,12 +99,12 @@
       </div>
 
       <input type="submit" value="Register" />
+      <input type="image" src="./resources/icons/fly-svgrepo-com.svg">
       <input type="reset">
       <button>
-        <img src="./resources/icons/fly-svgrepo-com.svg" alt="Where to travel?">
+        <img src="./resources/icons/fly-svgrepo-com.sv" alt="Where to travel?">
       </button>
     </fieldset>
-    <input type="submit" value="Send"/>
   </form>
 
 </body>
