@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- general meta tags -->
+  <meta charset="utf-8">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- site specific tags -->
+  <title>Hyperlinks</title>
+</head>
+
+<body>
+  <header>
+    <h1>Hyperlinks Tutorial</h1>
+    <nav>
+      <ul>
+        <li><a href="hyperlinks.html">Homepage</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>Topics:</h2>
+      <ol>
+        <li><a href="#_cr_hyper">Creating Hyperlinks</a></li>
+        <li><a href="#_add_supp">Adding supporting information with the title attribute</a></li>
+      </ol>
+    </section>
+    <section>
+      <article>
+        <h2 id="_cr_hyper">Creating hyperlinks</h2>
+
+        <h3>Prerequisites:</h3>
+        <p>Basic HTML familiarity, as covered in Getting started with HTML. HTML text formatting, as covered in HTML
+          text fundamentals.
+          Objective: To learn how to implement a hyperlink effectively, and link multiple files together.
+          What is a hyperlink?
+          Hyperlinks are one of the most exciting innovations the Web has to offer. They've been a feature of the Web
+          since the beginning, and are what makes the Web a web. Hyperlinks allow us to link documents to other
+          documents or resources, link to specific parts of documents, or make apps available at a web address. Almost
+          any web content can be converted to a link so that when clicked or otherwise activated the web browser goes to
+          another web address (URL).
+        </p>
+        <p>Note: A URL can point to HTML files, text files, images, text documents, video and audio files, or anything
+          else that lives on the Web. If the web browser doesn't know how to display or handle the file, it will ask you
+          if you want to open the file (in which case the duty of opening or handling the file is passed to a suitable
+          native app on the device) or download the file (in which case you can try to deal with it later on).
+        </p>
+        <p>For example, the BBC homepage contains many links that point not only to multiple news stories, but also
+          different areas of the site (navigation functionality), login/registration pages (user tools), and more.
+        <h3>Anatomy of a link</h3>
+        <p>A basic link is created by wrapping the text or other content inside an <a> element and using the href
+            attribute, also known as a Hypertext Reference, or target, that contains the web address.
+        </p>
+        <h3>Example</h3>
+        <code>&lt;p&gt;</code>
+        <code>I'm creating a link to</code>
+        <code>&lta href="https://www.mozilla.org/en-US/"&gt;the Mozilla homepage&lt;/a&gt;</code>
+        <code>&lt;/p&gt;</code>
+        <p>This gives us the following result:</p>
+        <p>I'm creating a link to <a href="https://www.mozilla.org/en-US">the Mozilla homepage.</a></p>
+
+        <h2 id="_add_supp">Adding supporting information with the title attribute</h2>
+        <p>Another attribute you may want to add to your links is title. The title contains additional information about
+          the link, such as which kind of information the page contains, or things to be aware of on the website.
+        </p>
+        <h3>Example</h3>
+        <p><code>&lt;p&gt;</code></p>
+        <code>I'm creating a link to</code>
+        <code>&lta href="https://www.mozilla.org/en-US/"</code>
+        <code>title="The best place to find more information about Mozilla's mission and how to contribute"&gt;</code>
+        <code>the Mozilla homepage&lt;/a&gt;</code>
+        <p><code>&lt;/p&gt;</code></p>
+        <p>This gives us the following result and hovering over the link displays the title as a tooltip.</p>
+      </article>
+    </section>
+  </main>
+  <footer>>
+
+  </footer>
+</body>
+
+</html>
