@@ -13,6 +13,9 @@ h1 {
   text-align: center;
 }
 
+::placeholder {
+  color: brown;
+}
 
 form {
   border: solid 1px black;

@@ -27,7 +27,7 @@
       }
 
       const cust1 = new Customer("Salah", "123 Somewhere", "Riyadh");
-      console.log(cust1);
+      console.log(`Object created manually: ${cust1}`);
       console.log(cust1.output());
     }
 
@@ -35,6 +35,7 @@
       const response = await fetch('https://mocki.io/v1/689a2e6a-39b0-4a2d-9f64-5baf8cf36571');
       const data = await response.json(); // returns a javascript object
 
+      console.log(`Data downloaded from Web API:`);
       console.log(data);
     }
 

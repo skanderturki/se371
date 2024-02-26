@@ -1,5 +1,4 @@
 
-
 const paintings = [
   {title: "Girl with a pearl earring", artist: "Vermeer", value: 10},
   {title: "Artists Holding a Thristle", artist: "Durer", value: 7},
@@ -19,7 +18,8 @@ console.log( total );
 
 console.log("All paintings sorted by value:")
 const compareFn = (a, b) => a.value - b.value;
-console.log( paintings.sort(compareFn));
+const sorted = paintings.sort(compareFn);
+sorted.forEach((e) => { console.log(e); });
 
 console.log("All paintings in uppercase:")
 console.log( paintings.map( p => `${p.title.toUpperCase()} : ${p.artist.toUpperCase()}`));
