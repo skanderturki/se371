@@ -22,4 +22,5 @@ const sorted = paintings.sort(compareFn);
 sorted.forEach((e) => { console.log(e); });
 
 console.log("All paintings in uppercase:")
-console.log( paintings.map( p => `${p.title.toUpperCase()} : ${p.artist.toUpperCase()}`));
+const mapped = paintings.map( p => `${p.title.toUpperCase()} : ${p.artist.toUpperCase()}`);
+mapped.forEach((e) => { console.log(e); });
