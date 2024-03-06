@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
       displayErrorMessageByID("email_err", "Incorrect Email format!");
       return;
     } else {
-      const email_pattern = /[a-zA-Z0-9\-_]{+}@[a-zA-Z0-9\-_]{+}.[a-zA-Z0-9\-_]{1,10}/
+      const email_pattern = /[a-zA-Z0-9\-_]{+}@[a-zA-Z0-9\-_\.]{+}.[a-zA-Z0-9\-_]{1,10}/
       const valid = email_pattern.test(email);
       if(!valid){
         e.preventDefault();

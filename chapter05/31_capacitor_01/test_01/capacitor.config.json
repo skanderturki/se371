@@ -1,0 +1,11 @@
+{
+  "appId": "org.skanderturki.test_01",
+  "appName": "test_01",
+  "bundledWebRuntime": false,
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  }
+}
