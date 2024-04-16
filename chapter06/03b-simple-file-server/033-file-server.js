@@ -42,4 +42,4 @@ const server = http.createServer(function (request, response) {
 
 // we don’t have to use port 8080; here we are using 7000
 server.listen(7000, "localhost");
-console.log("Server running at http://127.0.0.1:7000/");
+console.log("Server running at http://localhost:7000/");
