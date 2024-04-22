@@ -1,25 +1,12 @@
 // first reference required modules
-const fs = require('fs');
-const path = require('path');
+
 const express = require('express');
 require('dotenv').config();
-
+const getData = require("./file_utils");
 const app = express();
 
-// for now, we will read a json file from the data folder
-const jsonPath = path.join(__dirname, 'data', 'SE2022.json');
-// get data using conventional Node callback approach
-let curriculum;
-
-fs.readFile(jsonPath, (err,data) => {
-	if (err)
-		console.log('Unable to read json data file');
-	else
-  curriculum = JSON.parse(data);
-});
-
 // return the curriculum when a root request arrives
-app.get('/', (req, resp) => { resp.json(curriculum) } );
+app.get('/', (req, resp) => { resp.json(getData()) } );
 
 
 app.route('/level')
@@ -38,6 +25,12 @@ app.post( '/echo/:word', (req, res) => {
 	let param = req.params.word;
 	res.json( { echo: param } );  //use the variable as needed
 });
+
+
+app.use( (request, response) => {
+  response.status(404).send("<h1>404 Error</h1>");
+});
+
 
 app.listen(process.env.PORT, () => {
 	console.log("Server running at port: " + process.env.PORT);
