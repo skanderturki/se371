@@ -3,7 +3,7 @@ require('dotenv').config();
 
 const app = express();
 
-// return the curriculum when a root request arrives
+// Example:   http://localhost:3000/?id=78&name=skander
 app.get('/', (request, response) => { 
   response.json({"id": request.query.id, "name": request.query.name});
 } );

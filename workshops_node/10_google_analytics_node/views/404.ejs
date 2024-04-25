@@ -1,0 +1,26 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog RESTOS | <%= title %></title>
+    <link rel="stylesheet" href="./css/styles.css">
+  </head>
+
+<body>
+  <nav>
+    <div class="site-title">
+      <a href="/"><h1>Blog RESTO</h1></a>
+      <p>A restaurants blog</p>
+    </div>
+    <ul>
+      <li><a href="/">Blogs</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/create">New Blog</a></li>
+    </ul>
+  </nav>
+
+  <div class="not-found content">
+    OOPS, page not found :)
+  </div>
+
+  <%- include("./partials/footer.ejs") %>
