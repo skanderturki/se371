@@ -1,6 +1,6 @@
 
 const deleteArt = (obj) => {
-  let delete_promise = fetch('/v1/articles/' + obj.dataset.artid, { method: 'DELETE'})
+  let delete_promise = fetch('/articles/v1/' + obj.dataset.artid, { method: 'DELETE'})
   delete_promise.then(data => {
                         //alert(`Article deleted successfully!`);
                      })
@@ -14,7 +14,7 @@ const updateArt = (obj) => {
   const code = tds[1].innerText;
   const name = tds[2].innerText;
   const desc = tds[3].innerText;
-  let update_promise = fetch(`/v1/articles/id/${obj.dataset.artid}/code/${code}/name/${name}/desc/${desc}/`
+  let update_promise = fetch(`/articles/v1/id/${obj.dataset.artid}/code/${code}/name/${name}/desc/${desc}/`
                              , { method: 'PUT'})
   update_promise.then(response => response.json())
                      .then( data => {

@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGO_URI)
   .catch((err) => {console.log(err); });
 
 // Employee Routes
-app.use('/v1/employees', employeeRouter);
+app.use('/employees', employeeRouter);
 
 // Handle wrong requests
 app.use((request, response) => {

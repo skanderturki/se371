@@ -1,0 +1,22 @@
+<%- include('./partials/header.ejs') %>
+    <main class="main">
+      <section>
+        <p id="date"></p>
+      </section>
+      <section class="cards_section">
+        <% if( typeof chairs !== "undefined" && chairs && chairs.length > 0) { %>
+          <% chairs.forEach( (chair) => { %>
+            <article class="card">
+              <img src="<%= chair.img %>" alt="<%= chair.alt %>">
+              <h2><%= chair.name %></h2>
+              <p><%= chair.price %> SAR</p>
+              <button>Buy</button>
+            </article>
+          <% }); %>
+        <% } else { %>
+          <p>Sorry, no data to display....</p>
+        <% } %>
+      </section>
+      <script src="/js/client.js"></script>
+    </main>
+<%- include('./partials/footer.ejs') %>

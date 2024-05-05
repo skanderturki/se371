@@ -26,7 +26,7 @@ app.get('/', (request, response) => {
 });
 
 // Add Articles Routes handler
-app.use('/v1/articles', articlesRoutes);
+app.use('/articles/v1/', articlesRoutes);
 
 // Serve 404 page if no corresponding route
 app.use((request, response) => {

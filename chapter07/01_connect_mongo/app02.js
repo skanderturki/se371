@@ -16,18 +16,18 @@ app.get('/', (request, response) => {
 
 
 app.post('/v1/employees/name/:name/age/:age/positions/:positions', (request, response) => {
-let name = request.params.name;
-let age = request.params.age;
-let positions = request.params.positions.split(";");
+  let name = request.params.name;
+  let age = request.params.age;
+  let positions = request.params.positions.split(";");
 
-let emp = new Employee({name: name, age: age, positions: positions});
-emp.save()
-    .then( (result) => { 
-        console.log('Data saved...'); 
-        // Just to see in the browser that save worked correctly
-        response.send(result);
-    })
-    .catch( (err) => console.log(err));
+  let emp = new Employee({name: name, age: age, positions: positions});
+  emp.save()
+      .then( (result) => { 
+          console.log('Data saved...'); 
+          // Just to see in the browser that save worked correctly
+          response.send(result);
+      })
+      .catch( (err) => console.log(err));
 });
 
 app.post('/v1/employees/age/:age/positions/:positions', (request, response) => {
@@ -76,6 +76,7 @@ app.get('/v1/employees/id/:id', (request, response) => {
       response.send(result);
     })
     .catch( (err) => {
+      response.send(err);
       console.log(err);
     });
 });
@@ -90,9 +91,19 @@ app.get('/v1/employees/positions/:position', (request, response) => {
     });
 });
 
+app.get('/v4/employees/positions/:position', (request, response) => {
+  Employee.find({ positions: { $regex : new RegExp(`^${request.params.position}$`, "i") }})
+    .then( (result) => {
+      response.send(result);
+    })
+    .catch( (err) => {
+      console.log(err);
+    });
+});
+
 app.get('/v2/employees/positions/:position', (request, response) => {
   Employee.find({ positions: request.params.position })
-  .sort({ age : -1 })
+    .sort({ age : -1 })
     .then( (result) => {
       response.send(result);
     })

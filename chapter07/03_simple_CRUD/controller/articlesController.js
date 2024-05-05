@@ -66,7 +66,6 @@ const add_article = (request, response) => {
     .then((data) => {
       console.log(`Article saved to database: id -> ${data._id}`);
       response.render('add_article_form', {title: 'Add Article', errors: [], message: 'Item successfully added'});
-      //response.redirect('/v1/articles/add');
     })
     .catch((err) => { console.log(err) });
   
@@ -93,7 +92,7 @@ const delete_article = (request, response) => {
   Article.findByIdAndDelete(id)
     .then((result) => {
       console.log(`Article deleted from database: id -> ${result._id}`);
-      response.redirect('/v1/articles/search');
+      response.redirect('/articles/v1/search');
     })
     .catch((err) => { console.log(err) });
 };
