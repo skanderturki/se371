@@ -1,5 +1,5 @@
 
-export default (props) => {
+function Main (props) {
 
   return(
     <main>
@@ -8,3 +8,5 @@ export default (props) => {
     </main>
   );
 }
+
+export default Main

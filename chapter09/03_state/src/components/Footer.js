@@ -1,7 +1,8 @@
 import { useState } from 'react';
 
 const Footer = (props) => {
-  let [time, setTime] = useState(Date.now())
+  let [time, setTime] = useState(Date.now());
+  
   function updateTime(){
     setTime(Date.now());
   }

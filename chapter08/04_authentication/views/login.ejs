@@ -9,7 +9,10 @@
   <body>
     <div class="login-form">
       <% if(err) { %>
-      <p><%= err %></p>
+        <p class="error_msg"><%= err %></p>
+      <% } %>
+      <% if(info) { %>
+        <p class="info_msg"><%= info %></p>
       <% } %>
       <h3>Login Page</h3>
       <form action="/login" method="POST">

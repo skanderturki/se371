@@ -16,8 +16,12 @@
   width: 100%;
 }
 
-.login-form p{
+.error_msg{
   color: red;
+}
+
+.info_msg{
+  color: rgb(9, 102, 32);
 }
 
 button {

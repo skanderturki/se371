@@ -1,21 +1,22 @@
 import { useState } from "react";
 
-export default (props) => {
+function Login(props) {
 
   let [username, SetUsername] = useState("");
 
-  handleUsernameChange = (e) => {
-    this.setUsername({username: e.target,value});
+  const handleUsernameChange = (e) => {
+    SetUsername(e.target.value);
   }
 
   return(
     <div>
       <form>
         <label>Username</label>
-        <input type="text" name="username" value={this.state.username}
-                onChange={this.handleUsernameChange}></input>
+        <input type="text" name="username" value={username} onChange={handleUsernameChange} />
       </form>
       <p>Test: {username}</p>
     </div>
   );
 }
+
+export default Login;

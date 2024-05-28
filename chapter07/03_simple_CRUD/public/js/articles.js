@@ -16,8 +16,7 @@ const updateArt = (obj) => {
   const desc = tds[3].innerText;
   let update_promise = fetch(`/articles/v1/id/${obj.dataset.artid}/code/${code}/name/${name}/desc/${desc}/`
                              , { method: 'PUT'})
-  update_promise.then(response => response.json())
-                     .then( data => {
+  update_promise.then( data => {
                         //alert(`Article updates successfully!`);
                      })
     .catch((reject) => {

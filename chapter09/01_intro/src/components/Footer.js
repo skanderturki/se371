@@ -1,7 +1,7 @@
 
-const Footer = (props) => {
+function Footer(props) {
 
-  return(
+  return (
     <footer>
       <h4>Company Information</h4>
       <p>Phone: (+966) 548796541</p>

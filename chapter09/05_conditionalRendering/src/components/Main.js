@@ -1,8 +1,9 @@
 import { useState } from 'react';
 
-export default (props) => {
+function Main(props) {
+  let [message, setMessage] = useState("Nothing selected!");
+  
   if(props.isLogged){
-    let [message, setMessage] = useState("Nothing selected!");
     function getDetails(movie){
       setMessage(movie.title);
     }
@@ -34,3 +35,5 @@ export default (props) => {
   );
   
 }
+
+export default Main;

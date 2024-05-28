@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default (props) => {
+function Footer (props) {
   let [time, setTime] = useState(Date.now())
   function updateTime(){
     setTime(Date.now());
@@ -13,3 +13,5 @@ export default (props) => {
     </div>
   );
 }
+
+export default Footer;

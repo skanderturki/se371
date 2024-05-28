@@ -8,8 +8,10 @@ const landing_page = (req, res) => {
 
 const login_get = (req, res) => {
   const error = req.session.error;
+  const info = req.session.info;
+  req.session.info = undefined;
   req.session.error = undefined;
-  res.render("login", { err: error });
+  res.render("login", { err: error, info: info });
 };
 
 const login_post = async (req, res) => {
@@ -21,7 +23,7 @@ const login_post = async (req, res) => {
     req.session.error = "Invalid Credentials";
     return res.redirect("/login");
   }
-
+  
   const isMatch = await bcrypt.compare(password, user.password);
 
   if (!isMatch) {
@@ -47,7 +49,7 @@ const register_post = async (req, res) => {
 
   if (user) {
     req.session.error = "User already exists";
-    return res.redirect("/register");
+    return res.redirect("/login");
   }
 
   const hashPsw = await bcrypt.hash(password, 12);
@@ -57,9 +59,15 @@ const register_post = async (req, res) => {
     email: email,
     password: hashPsw,
   });
+  try {
+    await user.save();
+    req.session.info = "Registration successful";
+    res.redirect("/login");
+  } catch (err) {
+    request.session.error = "Something went wrong, try again!"
+    res.redirect("/registration");
+  }
 
-  await user.save();
-  res.redirect("/login");
 };
 
 const dashboard_get = (req, res) => {

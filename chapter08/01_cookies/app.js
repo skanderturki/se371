@@ -7,7 +7,8 @@ app.use(cookieParser());
 app.get('/', (req, resp) => {
   const opts = {
     maxAge: 24 * 60 * 60 * 1000, // set age limit to 1 day
-    httpOnly: true
+    httpOnly: true,
+    secure: true
   }
   const entries = Object.entries(req.cookies);
   if (entries.length == 0) {

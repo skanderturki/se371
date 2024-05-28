@@ -81,11 +81,14 @@ const update_article = (request, response) => {
   Article.findOneAndUpdate(filter, update)
     .then((result) => {
       console.log(`Article updated from database: id -> ${result._id}`);
-      response.redirect('/v1/articles/search');
+      response.redirect('/articles/v1/search');
     })
     .catch((err) => { console.log(err) });
 };
 
+/**
+ * Deletes the article that has the given id (encoded in request.params) from the database.
+ */
 const delete_article = (request, response) => {
   let id = request.params.id;
 
