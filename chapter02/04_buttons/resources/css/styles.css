@@ -1,0 +1,11 @@
+input:invalid, textarea:invalid {
+  border: 2px dashed red;
+}
+
+input:invalid:required, textarea:invalid:required {
+  background-image: linear-gradient(to right, pink, lightgreen);
+}
+
+input:valid, textarea:valid {
+  border: 2px solid black;
+}

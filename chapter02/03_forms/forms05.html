@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Lab 01</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <form method="post" action="/register">
+    <fieldset>
+      <legend>Registration Form</legend>
+
+        <label>ID: </label>
+        <input type="text" name="id" maxlength="4" />
+
+        <label>First Name: </label>
+        <input type="text" name="firstname" />
+
+        <label>Email: </label>
+        <input type="email" name="email" />
+
+        <label>Date of birth: </label>
+        <input type="date" name="birth" />
+
+        <label>Country: </label>
+        <select name="country" >
+          <option value="-1">Choose a country</option>
+          <option value="0">Vietnam</option>
+          <option value="1">Italy</option>
+          <option value="2">Saudi Arabia</option>
+        </select>
+
+        <label>Phone: </label>
+        <input type="text" name="phone" />
+
+        <label for="observations">Observations: </label><br>
+        <textarea id="observations" name="observations" rows="4" cols="50"></textarea>
+
+        <label for="myBrowser">Choose a browser from this list:</label>
+        <input list="browsers" id="myBrowser" name="myBrowser" />
+        <datalist id="browsers">
+          <option value="Chrome"></option>
+          <option value="Firefox"></option>
+          <option value="Opera"></option>
+          <option value="Safari"></option>
+          <option value="Microsoft Edge"></option>
+        </datalist>
+
+        <label for="ice-cream-choice">Choose a flavor:</label>
+        <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
+        
+
+        <datalist id="ice-cream-flavors">
+          <option value="Chocolate"></option>
+          <option value="Coconut"></option>
+          <option value="Mint"></option>
+          <option value="Strawberry"></option>
+          <option value="Vanilla"></option>
+        </datalist>
+        <button>
+          GOOGLE
+        
+        </button>
+
+
+      <input type="submit" />
+    </fieldset>
+
+  </form>
+
+        <button>
+          <a href="http://www.google.com">
+            <img src="./resources/icons/fly-svgrepo-com.svg" alt="">GOOGLE
+          </a>
+        </button>
+
+
+</body>
+
+</html>

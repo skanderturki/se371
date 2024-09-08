@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- general meta tags -->
+  <meta charset="utf-8">
+  <meta name="author" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- site specific tags -->
+  <title>Register</title>
+  <link rel="stylesheet" href="./resources/css/styles.css">
+</head>
+
+<body>
+  <form method="post" action="/register">
+    <fieldset>
+      <legend>Some Form</legend>
+      <div>
+        <label for="textinput">Text input:</label>
+        <input type="text" id="textinput" name="textinput" placeholder="Enter some text here." />
+      </div>
+      <div>
+        <label for="phone">Phone number 1:</label>
+        <input type="text" name="phone" id="phone"/>
+      </div>
+      <fieldset>
+        <legend>Buttons that submit the HTTP request</legend>
+        <input type="submit" value="Input Type Submit" />
+        <input type="image" src="./resources/icons/fly-svgrepo-com.svg" />
+        <button>
+          <img src="./resources/icons/fly-svgrepo-com.svg" alt="Where to travel?" />
+          Button With Image and Text
+        </button>
+        <button>Simple Button</button>
+        <button type="submit">Simple Button Type Submit</button>
+      </fieldset>
+      <fieldset>
+        <legend>Buttons that do not submit the HTTP request</legend>
+        <button type="button">Simple Button Type Button</button>
+        <input type="button" value="Input Type Button" />
+        <button disabled="disabled">Simple Disabled Button</button>
+        <input type="reset">
+      </fieldset>
+    </fieldset>
+  </form>
+
+</body>
+
+</html>
