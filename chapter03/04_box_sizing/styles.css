@@ -5,6 +5,13 @@ html, body {
   background-color: burlywood;
 }
 
+/** Remove then add this rule to see the difference. With this rule, the elements
+ * will occupy 100% + 4px > 100%, that's why they will be wider than the viewport.
+ */
+div {
+  border: solid 1px black;
+}
+
 .pixels {
   width: 200px;
   height: 50px;

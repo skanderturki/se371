@@ -1,0 +1,44 @@
+main, footer, form {
+  margin: 50px;
+}
+
+input {
+  /* styles for input not in a form  */
+  border: tomato 2px solid;
+}
+
+form {
+  /* styles for label */
+  font-family: system-ui;
+  font-size: 1.25rem;
+  input {
+    /* styles for input in a form  */
+    border: blue 2px dashed;
+  }
+}
+
+/* input:hover, label:hover, select:hover, button:hover {
+  color: red;
+  font-weight: bolder;
+} */
+
+/** Better with is() */
+:is(input,label,select,button):hover {
+  color: red;
+  font-weight: bolder;
+}
+
+table, td, th {
+  border: solid 1px black;
+  margin: 20px;
+  padding: 15px;
+}
+
+/** Note: doesn't work for labels (need to use JavaScript) */
+:is(main, footer, td, th, label, legend):first-letter {
+  text-transform: uppercase;
+}
+
+h1:first-letter {
+  text-transform: uppercase;
+}
