@@ -18,7 +18,7 @@ caption {
 
 table {
   font-size: 0.8em;
-  border-collapse: collapse; /* no effect as this is already done by the CSS reset */
+  /*border-collapse: collapse; /* no effect as this is already done by the CSS reset */
   text-align: left;
 }
 
