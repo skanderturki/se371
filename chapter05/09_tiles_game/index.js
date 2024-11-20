@@ -44,8 +44,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const table_cells = document.querySelectorAll("tbody td");
   for(let td of table_cells){
-    td.addEventListener("click", () => {
-      td.classList.toggle("background_blue");
+    td.addEventListener("mouseover", () => {
+      td.classList.add("background_blue");
+    });
+    td.addEventListener("mouseout", () => {
+      td.classList.remove("background_blue");
     });
   }
 })

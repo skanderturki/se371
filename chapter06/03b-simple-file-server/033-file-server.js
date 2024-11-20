@@ -12,6 +12,7 @@ const server = http.createServer(function (request, response) {
         // now turn that into a file system file name by adding the current
         // local folder path in front of the filename
         let filename = path.join(process.cwd(), requestedFile);
+    console.log(filename);
         // check if it exists on the computer
         fs.exists(filename, function(exists) {
               // if it doesn't exist, then return a 404 response

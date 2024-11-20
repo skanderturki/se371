@@ -7,7 +7,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // the public folder will be visible by http requests 
 // like http://localhost:3000/css/styles.css if the css folder is in the public folder
 app.use(express.static('public')); 
-app.listen(3000, "localhost", () => { console.log("Listening on port 3000...") });
+
+
 app.get('/', (request, response) => {
   response.sendFile('./pages/index.html', { root: __dirname });
 });
@@ -25,3 +26,5 @@ app.post('/name', (request, response) => {
 app.use( (request, response) => {
   response.status(404).sendFile('./pages/404.html', { root: __dirname });
 });
+
+app.listen(3000, "localhost", () => { console.log("Listening on port 3000...") });

@@ -8,38 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- site specific tags -->
   <title>Exercise innerhtml</title>
+  <script src="scripts4.js"></script>
 </head>
 <body>
   <h1>Exercise (innerHTML)</h1>
- <form method="post">
-   <fieldset>
-   <legend>Enter your Information:</legend>
-     <p>
-       <label>Position</label>
-       <input id="position" type="text" name="position">
-     </p>
-     <p>
-      <label>Name</label>
-      <input id="name" type="text" name="name">
-    </p>
-    <p>
-      <label>Last Name</label>
-      <input id="lastName" type="text" name="lastName">
-    </p>
-    <p>
-      <label>Email</label>
-      <input id="email" type="email" name="email">
-    </p>
-    <button type="button" onclick='makeArticle("display", getValueByID("position")
-                                                ,getValueByID("name")
-                                                ,getValueByID("lastName")
-                                                ,getValueByID("email"))'>
-                                                OK</button>
-    <input type="reset" onclick='clearElementByID("display")'>
-   </fieldset>
- </form>
- <br>
- <div id="display"></div>
- <script src="scripts.js"></script>
+  <br>
+  <div id="display"></div>
+  <button id="btn-validate">Validate</button>
+  <button id="btn-cancel">Cancel</button>
+
 </body>
 </html>

@@ -37,6 +37,20 @@
   <input type="submit" value="Submit">
 </form>
   <script>
+      // handler for onsubmit event of form2
+      function validateForm() {
+        const input = document.forms["form2"]["fname"];
+        let x = input.value;
+        if (x == "") {
+          input.classList.add("invalid");
+          input.classList.remove("valid");
+          return false;
+        } else {
+          input.classList.add("valid");
+          input.classList.remove("invalid");
+          return true;
+        }
+      }
 
     // handler for onsubmit event of form1
     function send(event) {
@@ -63,21 +77,6 @@
       }
     }
    
-    // handler for onsubmit event of form2
-    function validateForm() {
-      const input = document.forms["form2"]["fname"];
-      let x = input.value;
-      if (x == "") {
-        input.classList.add("invalid");
-        input.classList.remove("valid");
-        return false;
-      } else {
-        input.classList.add("valid");
-        input.classList.remove("invalid");
-        return true;
-      }
-    }
-
     // register event handler on submit to form1
     document.addEventListener("DOMContentLoaded", ()=>{
       const form = document.getElementById("form1");

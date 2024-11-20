@@ -48,6 +48,7 @@
         const menu_ul_items = document.querySelectorAll("#menu ul");
         for (let item of menu_ul_items) {
           item.addEventListener("click", function (e) {
+            e.stopPropagation();
             alert(
               "FROM UL:" +
                 e.target +
@@ -64,6 +65,7 @@
         menu_div.addEventListener(
           "click",
           function (e) {
+            e.stopPropagation();
             alert(
               "FROM DIV:" +
                 e.target +
