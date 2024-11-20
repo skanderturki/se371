@@ -1,0 +1,129 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "employees",
+    "collectionId": "beff3660-3f0a-4903-9486-08e15411a247",
+    "dateExported": "2024-11-15T18:46:03.870Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "ac8c96e1-e1bb-4e2c-a051-8b2007ef1477",
+            "colId": "beff3660-3f0a-4903-9486-08e15411a247",
+            "containerId": "",
+            "name": "Get all employees",
+            "url": "http://localhost:3000/api/employees/v1/",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-11-15T18:19:20.831Z",
+            "modified": "2024-11-15T18:19:20.831Z",
+            "headers": []
+        },
+        {
+            "_id": "70a0a974-8c75-4209-8d38-438945ac7b19",
+            "colId": "beff3660-3f0a-4903-9486-08e15411a247",
+            "containerId": "",
+            "name": "Search by Position and City",
+            "url": "http://localhost:3000/api/employees/v1/or/position/developer/city/Jeddah",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-11-15T18:19:30.064Z",
+            "modified": "2024-11-15T18:19:30.064Z",
+            "headers": []
+        },
+        {
+            "_id": "39ddb82d-9737-4012-b2c9-dca5fb72f507",
+            "colId": "beff3660-3f0a-4903-9486-08e15411a247",
+            "containerId": "",
+            "name": "Search from outside a city",
+            "url": "http://localhost:3000/api/employees/v1/not/city/jeddah",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-11-15T18:19:37.095Z",
+            "modified": "2024-11-15T18:19:37.095Z",
+            "headers": []
+        },
+        {
+            "_id": "5382792e-232f-416e-9a23-44c74faf556f",
+            "colId": "beff3660-3f0a-4903-9486-08e15411a247",
+            "containerId": "",
+            "name": "Search younger than",
+            "url": "http://localhost:3000/api/employees/v1/lt/age/30",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-11-15T18:19:44.031Z",
+            "modified": "2024-11-15T18:19:44.031Z",
+            "headers": []
+        },
+        {
+            "_id": "f8efff51-dc30-4ff4-9889-7565a2d11c59",
+            "colId": "beff3660-3f0a-4903-9486-08e15411a247",
+            "containerId": "",
+            "name": "Search by position",
+            "url": "http://localhost:3000/api/employees/v1/position/developer",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-11-15T18:19:50.223Z",
+            "modified": "2024-11-15T18:19:50.223Z",
+            "headers": []
+        },
+        {
+            "_id": "b22cdc5c-1f19-4c30-aabc-63804728c975",
+            "colId": "beff3660-3f0a-4903-9486-08e15411a247",
+            "containerId": "",
+            "name": "Add Employee",
+            "url": "http://localhost:3000/api/employees/v1/",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2024-11-15T18:19:55.894Z",
+            "modified": "2024-11-15T18:23:18.931Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": 3,\n  \"name\": \"Sam\",\n  \"position\": \"developer\",\n  \"city\": \"Kuwait city\",\n  \"age\": 45,\n  \"countryId\": 4\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "f424c592-1fe7-4948-a083-c2d9ac0fd542",
+            "colId": "beff3660-3f0a-4903-9486-08e15411a247",
+            "containerId": "",
+            "name": "Search by id",
+            "url": "http://localhost:3000/api/employees/v1/3",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-11-15T18:20:01.279Z",
+            "modified": "2024-11-15T18:23:39.285Z",
+            "headers": []
+        },
+        {
+            "_id": "bb2016cc-2666-4164-be08-4290ff6906a7",
+            "colId": "beff3660-3f0a-4903-9486-08e15411a247",
+            "containerId": "",
+            "name": "Update employee",
+            "url": "http://localhost:3000/api/employees/v1/002",
+            "method": "PUT",
+            "sortNum": 80000,
+            "created": "2024-11-15T18:20:07.200Z",
+            "modified": "2024-11-15T18:20:07.200Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Mundhir\",\n  \"position\": \"Manager\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "d19c0d0f-72b4-4ec4-b690-f066862f93e4",
+            "colId": "beff3660-3f0a-4903-9486-08e15411a247",
+            "containerId": "",
+            "name": "Delete employee",
+            "url": "http://localhost:3000/api/employees/v1/8",
+            "method": "DELETE",
+            "sortNum": 90000,
+            "created": "2024-11-15T18:20:12.095Z",
+            "modified": "2024-11-15T18:20:12.095Z",
+            "headers": []
+        }
+    ],
+    "ref": "P7xEjW5Eqq7mOApt87Fvnna0TGZgFRnJaWO2UCxlK4cOi10KAmowiD8RaNNHASaZZd1bUutgky5uVtyVX21wfA"
+}

@@ -1,0 +1,21 @@
+# Get all employees
+GET http://localhost:3000/api/employees/v1
+
+###
+
+# Create a new employee
+POST http://localhost:3000/api/employees/v1/
+
+{
+  "data": {
+    "type": "employees",
+    "attributes": {
+      "id": 9,
+      "name": "Ali",
+      "position": "developer",
+      "city": "Jeddah",
+      "age": 35,
+      "countryId": 1
+    }
+  }
+}

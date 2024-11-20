@@ -1,0 +1,40 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "countries",
+    "collectionId": "983da81d-a072-40f1-a0f0-b836d89a3f4f",
+    "dateExported": "2024-11-15T18:46:23.006Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "5635069c-64cd-4a40-a472-b3cfeebf4854",
+            "colId": "983da81d-a072-40f1-a0f0-b836d89a3f4f",
+            "containerId": "",
+            "name": "Get all countries",
+            "url": "http://localhost:3000/api/countries/v1/",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-11-15T18:20:37.678Z",
+            "modified": "2024-11-15T18:20:37.678Z",
+            "headers": []
+        },
+        {
+            "_id": "daec31d2-6bb0-4815-9126-7e15fa9bfede",
+            "colId": "983da81d-a072-40f1-a0f0-b836d89a3f4f",
+            "containerId": "",
+            "name": "Add country",
+            "url": "http://localhost:3000/api/countries/v1/",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-11-15T18:20:45.158Z",
+            "modified": "2024-11-15T18:21:20.089Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Kuwait\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "xBnIRAy3UA3LGpY-r4b_hCTSnTdGKX2VPyMCuQploUuHyVCKPZKBTC0H8CUdXI0wpgtzoK-TEn6hSvEH8LctUg"
+}

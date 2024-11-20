@@ -1,0 +1,43 @@
+0- Check that the MySQL windows service is running, open a terminal:
+>  net start
+
+or 
+
+Press Windows+R then execute: services.msc
+
+
+1- On the vscode terminal, open the MySQL shell:
+ > mysqlsh --mysqlx -u root -p
+
+then provide the password: 
+
+se371pwd
+
+2- Switch to ths sql mode (if you are on the JS mode)
+MySQL ... JS> \sql
+
+Now you have
+
+MySQL .... SQL>
+
+3- List all users:
+
+> SELECT user FROM MySQL.user;
+
+4- Create a new user: se371 with password se371pwd
+
+> CREATE USER 'se371'@'localhost' IDENTIFIED BY 'se371pwd';
+
+5- Verify that your new ser was created successfully.
+
+6- Ceate a database:
+
+> CREATE DATABASE se371db;
+
+7- Grant all privileges to se371 user on the se371db database:
+
+> GRANT ALL PRIVILEGES ON se371db.* TO 'se371'@'localhost';
+> FLUSH PRIVILEGES;
+
+8- Ext shell:
+press ctrl-D
