@@ -5,7 +5,7 @@ const Sequelize = require('sequelize');
 const sequelize = new Sequelize(
   'myshop',   //database name
   'avnadmin',     // database user
-
+  '',
   {   
     // specify the database server used
     dialect: 'mysql',

@@ -6,6 +6,8 @@ const app = express();
 app.use(express.static('public'));
 
 app.get('/', (request, response) => {
+  console.log(process.env);
+
   response.sendFile('./pages/index.html', { root: __dirname });
 });
 
@@ -24,5 +26,5 @@ app.use((request, response) => {
 });
 
 app.listen(process.env.PORT, "localhost", () => { 
-  console.log(`Listening on port ${process.env.PORT}...`);
+  console.log(`Listening on http://localhost:${process.env.PORT}`);
 });

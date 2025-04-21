@@ -26,5 +26,5 @@ app.get('/addToFavorites/:prodid', function(req, resp) {
 
 // start server
 app.listen(5000, 'localhost', () => {
-  console.log(`Listening on port 5000`);
+  console.log(`Listening on http://localhost:5000`);
 });

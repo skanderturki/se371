@@ -1,23 +1,5 @@
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog RESTOS | <%= title %></title>
-    <link rel="stylesheet" href="./css/styles.css">
-  </head>
+<%- include('./partials/header.ejs') %>
 
-<body>
-  <nav>
-    <div class="site-title">
-      <a href="/"><h1>Blog RESTO</h1></a>
-      <p>A restaurants blog</p>
-    </div>
-    <ul>
-      <li><a href="/">Blogs</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/create">New Blog</a></li>
-    </ul>
-  </nav>
   <div class="blogs content">
     <h2><%= title %>: All Blogs</h2>
       <% if(blogs && blogs.length > 0) { %>
@@ -29,18 +11,32 @@
         <p>There are no blogs to display...</p>
       <% } %>
   </div>
-  <div>
+  
+  <section>
     <table border>
-      <thead><tr><th>Title</th><th>Snippet</th></tr></thead>
-      <tbody>
-        <% if(blogs && blogs.length > 0) { %>
-          <% blogs.forEach( (blog) => { %>
-            <tr><td> <%= blog.title %> </td><td> <%= blog.snippet %></td></tr>
-          <% }) %>
-        <% } else { %>
-          <tr><td colspan="2">No data to display....</td></tr>
-        <% } %>
-      </tbody>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Snippet</th>
+            </tr>
+        </thead>
+        <tbody>
+          <% if(blogs.length > 0) { %>
+          <% blogs.forEach(blog=> { %>
+            <tr>
+              <td>
+                <%= blog.title %>
+              </td>
+              <td>
+                <%= blog.snippet %>
+              </td>
+            </tr>
+            <% }) %>
+          <% } else { %>
+            <tr><td colspan="2">No data found</td></tr>
+          <% } %>
+
+        </tbody>
     </table>
-  </div>
-<%- include("./partials/footer.ejs") %>
+  </section>
+<%- include('./partials/footer.ejs') %>

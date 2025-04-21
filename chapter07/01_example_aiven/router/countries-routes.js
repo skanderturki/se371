@@ -6,13 +6,13 @@ const router = express.Router();
 const Country = require('../model/Model').Country;
 
 // Select all
-router.get('/v1/', async (request, response) => {
+router.get('/', async (request, response) => {
   const countries = await Country.findAll();
   response.status(200).json({ countries: countries });
 })
 
 // Create
-router.post('/v1/', async (request, response) => {
+router.post('/', async (request, response) => {
   const { name } = request.body;
   const newCountry = Country.build({ "name": name });
 

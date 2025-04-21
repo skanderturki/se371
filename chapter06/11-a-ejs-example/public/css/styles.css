@@ -86,3 +86,10 @@ textarea{
   font-size: 1.2em;
   cursor: pointer;
 }
+
+@media screen and (max-width: 600px){
+  .desktoponly {
+    display:none;
+  }
+  
+}

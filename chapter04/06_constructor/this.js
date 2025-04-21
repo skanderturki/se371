@@ -6,7 +6,7 @@ const employee = {
     street: "faycaliyya street",
     city: "riyadh",
     country: "KSA",
-    output: function() { return this.nb + " " + this.street + ", " 
+    output: function() { this.nb + " " + this.street + ", " 
                         + this.city + ", " + this.country; },
   },
 

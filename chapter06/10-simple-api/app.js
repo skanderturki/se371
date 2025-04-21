@@ -9,11 +9,20 @@ const app = express();
 app.get('/', (req, resp) => { resp.json(getData()) } );
 
 
-app.route('/level')
-	.get( (req, res) => {  
-		res.json({ name: `${req.query.first} ${req.query.last}`});
-	}).post( (req, res) => {  
-		res.json({ name: `${req.query.first} ${req.query.last}`});
+// app.route('/level')
+// 	.get( (req, res) => {  
+// 		res.json({ name: `${req.query.first} ${req.query.last}`});
+// 	}).post( (req, res) => {  
+// 		res.json({ name: `${req.query.first} ${req.query.last}`});
+// 	});
+
+
+	app.get('/level', (req, res) => {
+		res.json({ name: `${req.query.first} ${req.query.last}` });
+	})
+	
+	app.post('/level', (req, res) => {
+		res.json({ name: `${req.query.first} ${req.query.last}` });
 	});
 
 app.get( '/echo/:word', (req, res) => {
@@ -33,5 +42,5 @@ app.use( (request, response) => {
 
 
 app.listen(process.env.PORT, () => {
-	console.log("Server running at port: " + process.env.PORT);
+	console.log("Server running at http://localhost:" + process.env.PORT);
 });

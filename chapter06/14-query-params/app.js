@@ -14,5 +14,5 @@ app.use( (request, response) => {
 
 
 app.listen(process.env.PORT, () => {
-	console.log("Server running at port: " + process.env.PORT);
+  console.log("Server running at http://localhost:" + process.env.PORT);
 });

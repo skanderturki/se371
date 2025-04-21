@@ -40,42 +40,9 @@ const Country = db.sequelize.define('Country', {
   timestamps: false
 });
 
-//Country.hasMany(Employee, { "foreignKey": "countryId"}); // Employee will contain the foreign key to a country
 Country.hasMany(Employee); // Employee will have a FK referencing a Country
 Employee.belongsTo(Country);
 
-// const Team = db.sequelize.define('Team', {
-//   id: {
-//     type: DataTypes.INTEGER,
-//     primaryKey: true
-//   },
-//   name: {
-//     type: DataTypes.STRING,
-//     validate: {
-//       max: 100
-//     }
-//   }
-// });
-
-// const TeamEmployees = db.sequelize.define('TeamEmployees', {
-//   employeeId: {
-//     type: DataTypes.INTEGER,
-//     references: {
-//       model: Employee,
-//       key: "id"
-//     }
-//   },
-//   teamId: {
-//     type: DataTypes.STRING,
-//     references: {
-//       model: Team,
-//       key: "id"
-//     }
-//   }
-// });
-
-// Employee.belongsToMany(Team, { through: TeamEmployees });
-// Team.belongsToMany(Employee, { through: TeamEmployees });
 
 db.sequelize.sync({ alter: true})
   .then(async () => {

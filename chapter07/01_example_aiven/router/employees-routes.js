@@ -7,13 +7,13 @@ const Employee = require('../model/Model').Employee;
 const Country = require('../model/Model').Country;
 
 // Select all
-router.get('/v1/', async (request, response) => {
+router.get('/', async (request, response) => {
   const employees = await Employee.findAll();
   response.status(200).json({ employees: employees });
 })
 
 // Create
-router.post('/v1/', async (request, response) => {
+router.post('/', async (request, response) => {
   const { id, name, position, age, city, countryId } = request.body;
   const newEmployee = Employee.build({ "id": id, "name": name, "position": position, "age": age, "city": city, "CountryId": countryId });
 
@@ -26,7 +26,7 @@ router.post('/v1/', async (request, response) => {
 })
 
 // Search by id and get the country name using the one-to-many association
-router.get('/v1/:id', async (request, response) => {
+router.get('/:id', async (request, response) => {
   try {
     const employee = await Employee.findOne({
       where: {
@@ -42,7 +42,7 @@ router.get('/v1/:id', async (request, response) => {
 })
 
 // Search by position and project on [id, name]
-router.get('/v1/position/:position', async (request, response) => {
+router.get('/position/:position', async (request, response) => {
   try {
     const employee = await Employee.findAll({
       attributes: ['id', 'name'],
@@ -57,7 +57,7 @@ router.get('/v1/position/:position', async (request, response) => {
 })
 
 // UPDATE
-router.put('/v1/:id', async (request, response) => {
+router.put('/:id', async (request, response) => {
   try {
     // find record by id
     const employee = await Employee.findOne({
@@ -80,7 +80,7 @@ router.put('/v1/:id', async (request, response) => {
 })
 
 // Delete record
-router.delete('/v1/:id', async (request, response) => {
+router.delete('/:id', async (request, response) => {
   try {
     // find record by id
     const employee = await Employee.findOne({
@@ -99,7 +99,7 @@ router.delete('/v1/:id', async (request, response) => {
 
 
 // Search by position and city
-router.get('/v1/position/:position/city/:city', async (request, response) => {
+router.get('/position/:position/city/:city', async (request, response) => {
   try {
     const employee = await Employee.findAll({
       where: {
@@ -113,7 +113,7 @@ router.get('/v1/position/:position/city/:city', async (request, response) => {
 })
 
 // Search by position or city
-router.get('/v1/or/position/:position/city/:city', async (request, response) => {
+router.get('/or/position/:position/city/:city', async (request, response) => {
   try {
     const employee = await Employee.findAll({
       where: {
@@ -127,7 +127,7 @@ router.get('/v1/or/position/:position/city/:city', async (request, response) => 
 })
 
 // Delete all employees from a given city
-router.delete('/v1/city/:city', async (request, response) => {
+router.delete('/city/:city', async (request, response) => {
   try {
     // delete record in a given city
     const employee = await Employee.destroy({
@@ -144,7 +144,7 @@ router.delete('/v1/city/:city', async (request, response) => {
 })
 
 // Find all employees from outside a given city
-router.get('/v1/not/city/:city', async (request, response) => {
+router.get('/not/city/:city', async (request, response) => {
   try {
     const employee = await Employee.findAll({
       where: {
@@ -163,7 +163,7 @@ router.get('/v1/not/city/:city', async (request, response) => {
 
 
 // Find all employees with age less than a number
-router.get('/v1/lt/age/:age', async (request, response) => {
+router.get('/lt/age/:age', async (request, response) => {
   try {
     const employee = await Employee.findAll({
       where: {

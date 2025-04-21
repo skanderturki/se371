@@ -2,6 +2,7 @@ class PhoneFormatException extends Error {
   constructor(phone) {
     super(`${phone} is not a valid phone number`);
   }
+  message = "Phone number is not a valid phone number"
 };
 
 class PhoneNumber {
@@ -25,5 +26,10 @@ class PhoneNumber {
   }
 };
 
-let phoneA = new PhoneNumber("4512458a235");
-console.log(`The phone number is ${phoneA}`);
+let phoneA;
+try {
+  phoneA = new PhoneNumber("4512458a235");
+  console.log(`The phone number is ${phoneA}`);
+} catch (e) {
+  console.error(e.message);
+}

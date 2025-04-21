@@ -31,4 +31,4 @@ app.use( (request, response) => {
   response.status(404).sendFile('./pages/404.html', { root: __dirname });
 });
 
-app.listen(3000, () => { console.log("Listening on port 3000...") });
+app.listen(3000, () => { console.log("Listening on port http://localhost:3000") });

@@ -12,8 +12,8 @@ app.use(express.json());
 const PORT = 3000;
 
 // register routers
-app.use("/api/employees", employees_router);
-app.use("/api/countries", countries_router);
+app.use("/api/v1/employees", employees_router);
+app.use("/api/v1/countries", countries_router);
 
 // Test server is working
 app.get('/', (request, response) => {
@@ -24,7 +24,7 @@ app.get('/', (request, response) => {
 // Start server, then connect to database
 app.listen(PORT, async () => {
   await db.connectToDB();
-  console.log(`Server is listening at http://localhost/${PORT}`);
+  console.log(`Server is listening at http://localhost:${PORT}`);
 });
 
 

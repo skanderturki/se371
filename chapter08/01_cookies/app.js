@@ -8,8 +8,9 @@ app.get('/', (req, resp) => {
   const opts = {
     maxAge: 24 * 60 * 60 * 1000, // set age limit to 1 day
     httpOnly: true,
-    secure: true
+    secure: true   // never sent but the browser if not HTTPS except on lacalhost
   }
+  
   const entries = Object.entries(req.cookies);
   if (entries.length == 0) {
     console.log(`No cookies found...`);
