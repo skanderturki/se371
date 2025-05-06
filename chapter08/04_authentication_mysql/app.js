@@ -1,6 +1,7 @@
 const express = require('express');
 const session = require('express-session');
 require('dotenv').config();
+const bodyparser = require('body-parser');
 
 const db = require("./config/database");
 
@@ -10,6 +11,7 @@ const appController = require("./controllers/appController");
 const authMiddleware = require("./middleware/auth");
 
 const app = express();
+app.use(bodyparser.urlencoded())
 app.set("view engine", "ejs");
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
@@ -23,7 +25,7 @@ let sessionStore = new MySQLStore({
 });
 
 // Catch errors
-sessionStore.on('error', function(error) {
+sessionStore.on('error', function (error) {
   console.log(error);
 });
 
@@ -35,7 +37,7 @@ app.use(session({
     maxAge: 1000 * 60 * 60 * 24 * 7, // 1 week
   },
   saveUninitialized: false,
-  resave: false,
+  resave: true,
   store: sessionStore,
   createDatabaseTable: true
 }));

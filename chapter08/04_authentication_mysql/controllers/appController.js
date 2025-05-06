@@ -19,9 +19,9 @@ const login_get = (req, res) => {
 const login_post = async (req, res) => {
   const { email, password } = req.body;
 
-  const user = await User.findOne({ 
+  const user = await User.findOne({
     where: {
-      email: email 
+      email: email
     }
   });
 
@@ -29,7 +29,7 @@ const login_post = async (req, res) => {
     req.session.error = "Invalid Credentials";
     return res.redirect("/login");
   }
-  
+
   const isMatch = await bcrypt.compare(password, user.password);
 
   if (!isMatch) {
@@ -50,7 +50,7 @@ const register_get = (req, res) => {
 
 const register_post = async (req, res) => {
   const { username, email, password } = req.body;
-
+  console.log(`Registering ${username}`);
   let user = await User.findOne({
     where: {
       email: email
@@ -92,6 +92,8 @@ const logout_post = (req, res) => {
   });
 };
 
-module.exports = { landing_page, login_get, login_post, 
-                  register_get, register_post, dashboard_get, 
-                  logout_post };
+module.exports = {
+  landing_page, login_get, login_post,
+  register_get, register_post, dashboard_get,
+  logout_post
+};

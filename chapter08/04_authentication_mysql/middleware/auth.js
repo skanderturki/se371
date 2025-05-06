@@ -1,4 +1,4 @@
-
+// use when trying to access protected resources
 const isAuth = (req, res, next) => {
   if (req.session.isAuth) {
     next();
@@ -8,6 +8,7 @@ const isAuth = (req, res, next) => {
   }
 };
 
+//use if user tries to re-log
 const isLogged = (req, res, next) => {
   if (req.session.isAuth) {
     return res.redirect("/dashboard");
@@ -16,4 +17,4 @@ const isLogged = (req, res, next) => {
   }
 };
 
-module.exports = {isAuth, isLogged};
+module.exports = { isAuth, isLogged };
